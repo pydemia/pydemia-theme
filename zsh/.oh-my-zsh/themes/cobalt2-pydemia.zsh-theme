@@ -65,8 +65,7 @@ prompt_segment() {
     echo -n " %{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%{$fg%} "
   else
     echo -n "%{$bg%}%{$fg%}%{$bg%} "
-  fi
-  # CURRENT_BG=$1
+  fi 
   CURRENT_BG=$1
   [[ -n $3 ]] && echo -n $3
 }
@@ -90,6 +89,8 @@ prompt_context() {
   local user=`whoami`
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
+  else
+    prompt_segment black default "%n@%m"
   fi
 }
 
