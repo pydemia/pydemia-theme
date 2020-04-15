@@ -64,8 +64,9 @@ prompt_segment() {
   if [[ $CURRENT_BG != 'NONE' && $1 != $CURRENT_BG ]]; then
     echo -n " %{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%{$fg%} "
   else
-    echo -n "%{$bg%}%{$fg%} "
+    echo -n "%{$bg%}%{$fg%}%{$bg%} "
   fi
+  # CURRENT_BG=$1
   CURRENT_BG=$1
   [[ -n $3 ]] && echo -n $3
 }
@@ -86,11 +87,10 @@ prompt_end() {
 
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
-  # local user=`whoami`
-  # if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-  #  prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
-  # fi
-  prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
+  local user=`whoami`
+  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
+  fi
 }
 
 # Git: branch/detached head, dirty status
@@ -198,7 +198,7 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue $CURRENT_FG '%~'
+  prompt_segment blue $CURRENT_FG '%~' # absolute: '%d', relative(~): '%~'
 }
 
 # Virtualenv: current working virtualenv
@@ -236,17 +236,29 @@ prompt_aws() {
     *) prompt_segment green black "AWS: $AWS_PROFILE" ;;
   esac
 }
+
+
 prompt_newline() {
   if [[ -n $CURRENT_BG ]]; then
-    echo -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR
-%(?.%F{$CURRENT_BG}.%F{red})❯%f"
-
+    echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%E\\n%(?.%F{$CURRENT_BG}.%F{red})❯%f"
   else
     echo -n "%{%k%}"
   fi
-
   echo -n "%{%f%}"
   CURRENT_BG=''
+}
+
+# For Absolute Path for `prompt_dir` 
+prompt_rspec_stats() {
+  if [[ (-d app && -d spec) ]]; then
+    local app=`wc -l app/**/*.rb | grep -oE "[0-9]+" | tail -n 1`
+    local spec=$((`wc -l spec/**/*.rb | grep -oE "[0-9]+" | tail -n 1`))+0.01
+    local ratio=`printf "%.2f\n" $((spec/app))`
+
+    [[ ratio -ge 0.75 ]] && prompt_segment cyan black "$ratio"
+    [[ ratio -ge 0.5 && ratio -lt 0.75 ]] && prompt_segment yellow black "$ratio"
+    [[ ratio -lt 0.5 ]] && prompt_segment red black "$ratio"
+  fi
 }
 
 ## Main prompt
@@ -260,6 +272,7 @@ build_prompt() {
   prompt_git
   prompt_bzr
   prompt_hg
+  # prompt_rspec_stats
   prompt_newline
   prompt_end
 }
@@ -267,4 +280,6 @@ build_prompt() {
 # PROMPT='┌───%{%f%b%k%}$(build_prompt) 
 # └─$(prompt_end)'
 
-PROMPT='%{%f%b%k%}$(build_prompt) '
+PROMPT="%{%f%b%k%}$(build_prompt) "
+# RPROMPT="[%D{%y-%m-%f}|%D{%H:%M:%S} %D{%c}]"
+RPROMPT="%{$fg[default]%}[%D{%c}]"
