@@ -3,12 +3,12 @@ if has("syntax")
     syntax on
 endif
 
-" One tab to 4 spaces
-set softtabstop=4
-set tabstop=4
+" One tab to N spaces
+set softtabstop=2
+set tabstop=2
 
 " <<, >> move
-set shiftwidth=4
+set shiftwidth=2
 
 " tab to space
 set expandtab
