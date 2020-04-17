@@ -3,25 +3,8 @@ export OSH=/home/pydemia/.oh-my-bash
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="font"
-
-ZSH_THEME="cobalt2-pydemia"
-#ZSH_THEME="agnoster"
-eval `dircolors ~/.pydemia-config/.dircolors`
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-source /home/pydemia/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+#OSH_THEME="font"
+OSH_THEME="cobalt2-pydemia"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -68,7 +51,7 @@ source /home/pydemia/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highligh
 completions=(
   git
   composer
-  ssh-agent
+  ssh
 )
 
 # Which aliases would you like to load? (aliases can be found in ~/.oh-my-bash/aliases/*)
@@ -86,7 +69,6 @@ aliases=(
 plugins=(
   git
   bashmarks
-  ssh-
 )
 
 source $OSH/oh-my-bash.sh
@@ -96,15 +78,6 @@ source $OSH/oh-my-bash.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-export LANG="en_US.UTF-8"
-export LANGUAGE="en_US.UTF-8"
-#export LC_COLLATE="en_US.UTF-8"
-#export LC_CTYPE=="en_US.UTF-8"
-#export LC_MESSAGES="en_US.UTF-8"
-#export LC_MONETARY="en_US.UTF-8"
-#export LC_NUMERIC="en_US.UTF-8"
-#export LC_TIME="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
