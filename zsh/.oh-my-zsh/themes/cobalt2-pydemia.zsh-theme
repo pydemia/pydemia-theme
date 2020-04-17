@@ -210,6 +210,20 @@ prompt_virtualenv() {
   fi
 }
 
+prompt_python_venv() {
+  # local virtualenv_path="$VIRTUAL_ENV"
+  local python_venv=""
+  local color=cyan
+  # export VIRTUAL_ENV_DISABLE_PROMPT=yes
+  if [[ -n $VIRTUAL_ENV && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
+      python_venv="$VIRTUAL_ENV"
+      prompt_segment $color black "$(basename $VIRTUAL_ENV)"
+  elif [[ -n $CONDA_DEFAULT_ENV ]]; then
+      python_venv="$CONDA_DEFAULT_ENV"
+      prompt_segment $color black "$CONDA_DEFAULT_ENV" # "(`basename $CONDA_DEFAULT_ENV`)"
+  fi
+}
+
 # Status:
 # - was there an error
 # - am I root
@@ -264,9 +278,9 @@ prompt_rspec_stats() {
 
 ## Main prompt
 build_prompt() {
-  RETVAL=$?
+  prompt_python_venv
   prompt_status
-  prompt_virtualenv
+  # prompt_virtualenv
   prompt_aws
   prompt_context
   prompt_dir
@@ -278,9 +292,46 @@ build_prompt() {
   prompt_end
 }
 
-# PROMPT='┌───%{%f%b%k%}$(build_prompt) 
-# └─$(prompt_end)'
 
 PROMPT="%{%f%b%k%}$(build_prompt) "
-# RPROMPT="[%D{%y-%m-%f}|%D{%H:%M:%S} %D{%c}]"
+
 RPROMPT="%{$fg[default]%}[%D{%c}]"
+
+# ================================================= #
+
+# build_prompt() {
+#     prompt_python_venv
+#     [[ ! -z ${AG_EMACS_DIR+x} ]] && prompt_emacsdir
+#     prompt_status
+#     #[[ -z ${AG_NO_HIST+x} ]] && prompt_histdt
+#     [[ -z ${AG_NO_CONTEXT+x} ]] && prompt_context
+#     # prompt_virtualenv
+#     prompt_aws
+#     prompt_dir
+#     prompt_git
+#     prompt_bzr
+#     prompt_hg
+#     # prompt_rspec_stats
+#     prompt_newline
+#     prompt_end
+# }
+
+# set_bash_prompt() {
+#     RETVAL=$?
+#     PR=""
+#     PRIGHT=""
+#     CURRENT_BG=NONE
+#     #PR="$(ansi_single $(text_effect reset))"
+#     build_prompt
+
+#     # uncomment below to use right prompt
+#     PS1='\[$(tput sc; printf "%*s" $COLUMNS "$PRIGHT"; tput rc)\]'$PR
+    
+#     # left prompt
+#     PS1=$PR
+# }
+
+# # PROMPT='┌───%{%f%b%k%}$(build_prompt) 
+# # └─$(prompt_end)'
+
+# PROMPT="$(set_bash_prompt) "
