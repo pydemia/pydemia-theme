@@ -278,6 +278,7 @@ prompt_rspec_stats() {
 
 ## Main prompt
 build_prompt() {
+  RETVAL=$?
   prompt_python_venv
   prompt_status
   # prompt_virtualenv
