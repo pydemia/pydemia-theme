@@ -294,9 +294,10 @@ build_prompt() {
 }
 
 
-PROMPT="%{%f%b%k%}$(build_prompt) "
-
-RPROMPT="%{$fg[default]%}[%D{%c}]"
+# PROMPT="$(command)"  # this will run command, then set RPROMPT to the result
+# PROMPT='$(command)'  # this will set RPROMPT to run command each time it is printed
+PROMPT='%{%f%b%k%}$(build_prompt) '
+RPROMPT='%{$fg[default]%}[%D{%c}]'
 
 # ================================================= #
 
@@ -335,4 +336,4 @@ RPROMPT="%{$fg[default]%}[%D{%c}]"
 # # PROMPT='┌───%{%f%b%k%}$(build_prompt) 
 # # └─$(prompt_end)'
 
-# PROMPT="$(set_bash_prompt) "
+# PROMPT='$(set_bash_prompt) '
