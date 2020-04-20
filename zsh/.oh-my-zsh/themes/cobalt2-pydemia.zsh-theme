@@ -84,14 +84,49 @@ prompt_end() {
 ### Prompt components
 # Each component will draw itself, and hide itself if no information needs to be shown
 
+# Status:
+# - was there an error
+# - am I root
+# - are there background jobs?
+prompt_status() {
+  local -a symbols
+
+  symbols="%{%F{green}%}✓"
+  [[ $RETVAL -ne 0 ]] && symbols="%{%F{red}%}✘"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙️" # ⚙☸
+  # [[ -n $SSH_CLIENT ]] && symbols+="%{%F{yellow}%}🔑"
+  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
+}
+
+# "🔋🔐🖥🔑🔗🔒🔓🧲🔧📎🏭💡☀🌎✔⌛⏳⏱🌡💎🔌💾📀🔍🔖📍🛠🔔🎵⚓🏠
+# ⚠⛔🚫☢☣🔆✖➕➖➗
+# ‼⁉❓❔❕❗✔✘❌😃🥵😱😨😡💀👌👍👎
+# 🌙⭐☁🌏🌈"
+
+
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   local user=`whoami`
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
+  local user_info
+  # if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+  #   prompt_segment black default "%(!.%{%F{yellow}%}.)%n@%m"
+  # else
+  #   prompt_segment black default "%n@%m"
+  # fi
+  if [[ $USER == $DEFAULT_USER ]]; then
+    user_info="%(!.%{%F{yellow}%}.)%n" #"%{%F[yellow]%}%n"
   else
-    prompt_segment black default "%n@%m"
+    user_info="%{%F{default}%}%n"
   fi
+  if [[ -n $SSH_CLIENT ]]; then
+    user_info+="%{%F{yellow}%}%{%F{yellow}%}@%m🔗"
+  else
+    user_info+="%{%F[default]%}@%m🏠"
+  fi;
+
+  prompt_segment black default "$user_info"
+  
 }
 
 # Git: branch/detached head, dirty status
@@ -224,20 +259,6 @@ prompt_python_venv() {
   fi
 }
 
-# Status:
-# - was there an error
-# - am I root
-# - are there background jobs?
-prompt_status() {
-  local -a symbols
-
-  symbols="%{%F{green}%}✓"
-  [[ $RETVAL -ne 0 ]] && symbols="%{%F{red}%}✘"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%} ⚡"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%} ⚙"
-
-  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
-}
 
 #AWS Profile:
 # - display current AWS_PROFILE name
