@@ -255,6 +255,7 @@ prompt_python_venv() {
       prompt_segment $color black "$(basename $VIRTUAL_ENV)"
   elif [[ -n $CONDA_DEFAULT_ENV ]]; then
       python_venv="$CONDA_DEFAULT_ENV"
+      conda config --set changeps1 False
       prompt_segment $color black "$CONDA_DEFAULT_ENV" # "(`basename $CONDA_DEFAULT_ENV`)"
   fi
 }
