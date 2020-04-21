@@ -122,7 +122,7 @@ prompt_context() {
   if [[ -n $SSH_CLIENT ]]; then
     user_info+="%{%F{yellow}%}%{%F{yellow}%}@%m🔗"
   else
-    user_info+="%{%F[default]%}@%m🏠"
+    user_info+="%{%F{default}%}@%m🏠"
   fi;
 
   prompt_segment black default "$user_info"
