@@ -1,8 +1,8 @@
 # pydemia-theme
 
-* [`bash`]
-* [`zsh`]
-* [`vim`]
+* [`bash`]()
+* [`zsh`]()
+* [`vim`]()
 
 * Syntax coloring (Base: `cobalt2`)
   - [`atom`](https://github.com/pydemia/pydemia-atom-syntax)
