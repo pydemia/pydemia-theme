@@ -31,6 +31,26 @@ codes
 ```
 
 
+:white_check_mark:
+:no_entry:
+
+:heavy_check_mark: :white_check_mark:
+:x: :no_entry:
+:warning:
+
+:bulb: :bell:
+:speech_balloon:
+:star: :zap:
+:grey_question:
+
+:+1:
+:-1:
+:trophy:
+
+
+| ![]() |
+| ----- |
+
 
 [↑ Up to the Top](#data-structure)
 
