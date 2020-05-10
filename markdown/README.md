@@ -3,11 +3,20 @@
 
 # Data Structure
 
+---
+# Terminology
 * [words](#words)
 
+# Table of Contents
+* A
+ * AA
+ * AB
+* B
+  * BA
+  * BB
+---
 
-
-
+# Prerequisite
 
 ---
 ## words
