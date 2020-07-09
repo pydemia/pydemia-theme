@@ -320,10 +320,10 @@ build_prompt() {
 # PROMPT='$(command)'  # this will set RPROMPT to run command each time it is printed
 PROMPT='%{%f%b%k%}$(build_prompt) '
 # RPROMPT='%{$fg[default]%}[%D{%c}]'
-# RPROMPT='%{$fg[yellow]%}[%D{%a %m/%f %Y} %D{%T} %D{%Z}] %{$reset_color%}%'
-# RPROMPT='%{$fg[yellow]%}[%D{%a %m/%f %Y} %D{%T} %D{%Z}] %{$reset_color%}%'
-# RPROMPT='%{$fg[white]%}[%{$fg[yellow]%}%D{%a %m/%f} %{$fg[black]%}%D{%Y} %{$fg[white]%}%D{%T} %{$fg[green]%}%D{%Z}%{$fg[white]%}] %{$reset_color%}%'
-RPROMPT='%{$fg[white]%}[%{$fg[white]%}%D{%a %m/%f %Y} %{$fg[yellow]%}%D{%T} %{$fg[yellow]%}%D{%Z}%{$fg[white]%}]%{$reset_color%}%'
+# RPROMPT='%{$fg[yellow]%}[%D{%a %m/%d %Y} %D{%T} %D{%Z}] %{$reset_color%}%'
+# RPROMPT='%{$fg[yellow]%}[%D{%a %m/%d %Y} %D{%T} %D{%Z}] %{$reset_color%}%'
+# RPROMPT='%{$fg[white]%}[%{$fg[yellow]%}%D{%a %m/%d} %{$fg[black]%}%D{%Y} %{$fg[white]%}%D{%T} %{$fg[green]%}%D{%Z}%{$fg[white]%}] %{$reset_color%}%'
+RPROMPT='%{$fg[white]%}[%{$fg[white]%}%D{%a %m/%d %Y} %{$fg[yellow]%}%D{%T} %{$fg[yellow]%}%D{%Z}%{$fg[white]%}]%{$reset_color%}%'
 
 # ================================================= #
 
