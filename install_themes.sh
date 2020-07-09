@@ -179,6 +179,12 @@ install_bash_theme() {
   # echo "source ~/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
   #echo "source .pydemia-theme/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 
+  # Install `gdircolors`: GNU `dircolors` alternative
+  if [ "$OS_NAME" = "osx" ]; then
+    $pkgmgr install coreutils
+  ln -s /usr/local/bin/gdircolors /usr/local/bin/dircolors
+
+
   if [ "$OS_NAME" = "linux" ]; then
     sed -i 's/^OSH_THEME*/#&/' ~/.bashrc
   elif [ "$OS_NAME" = "osx" ]; then
