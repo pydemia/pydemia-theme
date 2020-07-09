@@ -301,10 +301,10 @@ prompt_dir() {
 # - are there background jobs?
 prompt_status() {
     local symbols
-    symbols=()
+    symbols="$(ansi_single $(fg_color green))✓"
     [[ $RETVAL -ne 0 ]] && symbols+="$(ansi_single $(fg_color red))✘"
     [[ $UID -eq 0 ]] && symbols+="$(ansi_single $(fg_color yellow))⚡"
-    [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="$(ansi_single $(fg_color cyan))⚙"
+    [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="$(ansi_single $(fg_color cyan))⚙"  # ⚙☸
 
     [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
