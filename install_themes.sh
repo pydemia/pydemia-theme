@@ -183,6 +183,8 @@ install_bash_theme() {
     sed -i 's/^OSH_THEME*/#&/' ~/.bashrc
   elif [ "$OS_NAME" = "osx" ]; then
     sed -i '' 's/^OSH_THEME*/#&/' ~/.bash_profile
+  fi
+
   cat ~/.pydemia-theme/bash/.bashrc >> ~/.bash_profile
 
   rm -rf ~/.pydemia-theme
