@@ -40,7 +40,10 @@ echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> 
 ### (On MAC)
 
 ```sh
-brew install gdircolors
+#brew install gdircolors
+brew install coreutils
+
+ln -s /usr/local/bin/gdircolors /usr/local/bin/dircolors
 ```
 
 [`.zshrc`](.zshrc)
