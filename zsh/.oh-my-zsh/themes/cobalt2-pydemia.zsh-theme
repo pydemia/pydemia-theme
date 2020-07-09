@@ -313,44 +313,6 @@ build_prompt() {
 
 # PROMPT="$(command)"  # this will run command, then set RPROMPT to the result
 # PROMPT='$(command)'  # this will set RPROMPT to run command each time it is printed
+
 PROMPT='%{%f%b%k%}$(build_prompt) '
 RPROMPT='%{$fg[white]%}[%{$fg[white]%}%D{%a %m/%d %Y} %{$fg[yellow]%}%D{%T} %{$fg[yellow]%}%D{%Z}%{$fg[white]%}]%{$reset_color%}%'
-
-# ================================================= #
-
-# build_prompt() {
-#     prompt_python_venv
-#     [[ ! -z ${AG_EMACS_DIR+x} ]] && prompt_emacsdir
-#     prompt_status
-#     #[[ -z ${AG_NO_HIST+x} ]] && prompt_histdt
-#     [[ -z ${AG_NO_CONTEXT+x} ]] && prompt_context
-#     # prompt_virtualenv
-#     prompt_aws
-#     prompt_dir
-#     prompt_git
-#     prompt_bzr
-#     prompt_hg
-#     # prompt_rspec_stats
-#     prompt_newline
-#     prompt_end
-# }
-
-# set_bash_prompt() {
-#     RETVAL=$?
-#     PR=""
-#     PRIGHT=""
-#     CURRENT_BG=NONE
-#     #PR="$(ansi_single $(text_effect reset))"
-#     build_prompt
-
-#     # uncomment below to use right prompt
-#     PS1='\[$(tput sc; printf "%*s" $COLUMNS "$PRIGHT"; tput rc)\]'$PR
-    
-#     # left prompt
-#     PS1=$PR
-# }
-
-# # PROMPT='┌───%{%f%b%k%}$(build_prompt) 
-# # └─$(prompt_end)'
-
-# PROMPT='$(set_bash_prompt) '
