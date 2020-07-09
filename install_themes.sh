@@ -182,6 +182,7 @@ install_bash_theme() {
   # Install `gdircolors`: GNU `dircolors` alternative
   if [ "$OS_NAME" = "osx" ]; then
     $pkgmgr install coreutils
+  fi
   ln -s /usr/local/bin/gdircolors /usr/local/bin/dircolors
 
 
