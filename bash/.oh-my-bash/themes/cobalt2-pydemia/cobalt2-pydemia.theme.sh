@@ -233,20 +233,10 @@ prompt_python_venv() {
     local python_venv=""
     local color=cyan
     if [[ -n $VIRTUAL_ENV ]]; then
-        prompt_segment $color cyan #$PRIMARY_FG
         prompt_segment $color black "$(basename $VIRTUAL_ENV)"
     elif [[ -n "${CONDA_DEFAULT_ENV}" ]]; then
-        prompt_segment $color cyan # $PRIMARY_FG
         prompt_segment $color black "$(basename $CONDA_DEFAULT_ENV)"
     fi
-    # if [[ -n "${CONDA_DEFAULT_ENV}" ]]; then
-    #   python_venv="${CONDA_DEFAULT_ENV}"
-    #   PYTHON_VENV_CHAR=${CONDA_PYTHON_VENV_CHAR}
-    # elif [[ -n "${VIRTUAL_ENV}" ]]; then
-    #   python_venv=$(basename "${VIRTUAL_ENV}")
-    # fi
-
-    # [[ -n "${python_venv}" ]] && echo "${PYTHON_VENV_CHAR}${python_venv}|${PYTHON_VENV_THEME_PROMPT_COLOR}"
 }
 
 
@@ -256,10 +246,20 @@ prompt_python_venv() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
     local user=`whoami`
-
-    if [[ $user != $DEFAULT_USER || -n $SSH_CLIENT ]]; then
-        prompt_segment black default "$user@\h"
+    local user_info
+    if [[ $user == $DEFAULT_USER ]]; then
+        user_info="$(ansi_single $(fg_color yellow))$user"
+    else
+        user_info="$(ansi_single $(fg_color default))$user"
     fi
+
+    if [[ -n $SSH_CLIENT ]]; then
+        user_info+="$(ansi_single $(fg_color yellow))@\h🔗"
+    else
+        user_info+="$(ansi_single $(fg_color default))@\h🏠"
+    fi
+
+    prompt_segment black default "$user_info"
 }
 
 # prints history followed by HH:MM, useful for remembering what
