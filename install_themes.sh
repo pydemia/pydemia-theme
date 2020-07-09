@@ -154,6 +154,8 @@ install_zsh() {
     sed -i 's/^ZSH_THEME*/#&/' ~/.zshrc
   elif [ "$OS_NAME" = "osx" ]; then
     sed -i '' 's/^ZSH_THEME*/#&/' ~/.zshrc
+  fi
+
   cat ~/.pydemia-theme/zsh/.zshrc >> ~/.zshrc
 
   rm -rf ~/.pydemia-theme
