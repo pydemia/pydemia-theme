@@ -146,9 +146,6 @@ install_zsh() {
   git clone https://github.com/pydemia/pydemia-theme ~/.pydemia-theme
   cp ~/.pydemia-theme/zsh/.oh-my-zsh/themes/cobalt2-pydemia.zsh-theme ~/.oh-my-zsh/themes/
   cp -r ~/.pydemia-theme/zsh/.pydemia-config ~/
-  echo "source ~/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
-  #echo "source .pydemia-theme/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-
   
   if [ "$OS_NAME" = "linux" ]; then
     sed -i 's/^ZSH_THEME*/#&/' ~/.zshrc
@@ -157,6 +154,8 @@ install_zsh() {
   fi
 
   cat ~/.pydemia-theme/zsh/.zshrc >> ~/.zshrc
+  # echo "source ~/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+  # echo "source .pydemia-theme/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc:
 
   rm -rf ~/.pydemia-theme
 
