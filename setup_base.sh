@@ -107,8 +107,6 @@ get_base() {
     echo "export JAVA_HOME=\"$JAVA_HOME\"" >> /etc/bashrc
   fi
 
-}
-
   $pkgmgr install vim ctags -y
   if [[ -n $(which zsh) ]]; then
     $pkgmgr install zsh -y
