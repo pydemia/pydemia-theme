@@ -1,5 +1,12 @@
 # pydemia-theme
 
+```sh
+git clone https://github.com/pydemia/pydemia-theme
+cd pydemia-theme
+sudo ./setup_base.sh
+./install_themes.sh
+```
+
 * [`bash`]()
 * [`zsh`]()
 * [`vim`]()
