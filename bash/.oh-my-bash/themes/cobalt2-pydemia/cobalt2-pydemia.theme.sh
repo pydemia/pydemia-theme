@@ -248,15 +248,15 @@ prompt_context() {
     local user=`whoami`
     local user_info
     if [[ $user == $DEFAULT_USER ]]; then
-        user_info="$(ansi_single $(fg_color yellow))$user"
+        user_info="$(ansi_single $(fg_color yellow) $(bg_color black))$user"
     else
-        user_info="$(ansi_single $(fg_color default))$user"
+        user_info="$(ansi_single $(fg_color default) $(bg_color black))$user"
     fi
 
     if [[ -n $SSH_CLIENT ]]; then
-        user_info+="$(ansi_single $(fg_color yellow))@\h🔗"
+        user_info+="$(ansi_single $(fg_color yellow) $(bg_color black))@\h🔗"
     else
-        user_info+="$(ansi_single $(fg_color default))@\h🏠"
+        user_info+="$(ansi_single $(fg_color default) $(bg_color black))@\h🏠"
     fi
 
     prompt_segment black default "$user_info"
