@@ -7,6 +7,7 @@ if [[ work_dir =~ pydemia-theme ]]; then
   source_dir="$HOME/.pydemia-theme"
 else
   source_dir=$work_dir
+fi
 
 install_vim() {
 
