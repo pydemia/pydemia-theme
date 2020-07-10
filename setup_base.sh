@@ -99,8 +99,12 @@ get_base() {
     # $pkgmgr install openjdk-8-jdk -y --fix-missing
     wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add -
     add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
+<<<<<<< HEAD
     $pkgmgr update -y
     $pkgmgr install adoptopenjdk-14-hotspot
+=======
+    $pkgmgr install <adoptopenjdk-14-hotspot>
+>>>>>>> c9a3fad25f240731b6a06312c59f1c7739d687f3
 
   elif [ "$DIST_NAME" = "centos" ]; then
     repo_str="[AdoptOpenJDK]
@@ -110,7 +114,10 @@ enabled=1
 gpgcheck=1
 gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
     echo $repo_str >> /etc/yum.repos.d/adoptopenjdk.repo
+<<<<<<< HEAD
     $pkgmgr update -y
+=======
+>>>>>>> c9a3fad25f240731b6a06312c59f1c7739d687f3
     $pkgmgr install adoptopenjdk-14-hotspot
   fi
 
