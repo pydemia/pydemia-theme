@@ -209,3 +209,5 @@ build_prompt() {
   install_zsh
   install_bash_theme
 }
+
+build_prompt
