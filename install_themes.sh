@@ -26,7 +26,7 @@ install_vim() {
 
 install_zsh() {
 
-  chsh -s $(which zsh)
+  if [[ $SHELL != /bin/zsh ]] && chsh -s $(which zsh)
 
   # Install Oh-My-Zsh
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true
