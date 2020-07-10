@@ -123,7 +123,7 @@ gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
     echo "export JAVA_HOME=\"$JAVA_HOME\"" >> /etc/bashrc
   fi
 
-  if [[ $OS_NAME != "linux" ]]; then
+  if [[ $OS_NAME == "linux" ]]; then
     $pkgmgr install vim ctags -y
     if [[ -n $(which zsh) ]]; then
       $pkgmgr install zsh -y
