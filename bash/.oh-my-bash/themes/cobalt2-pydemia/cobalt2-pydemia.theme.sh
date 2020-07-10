@@ -423,6 +423,19 @@ prompt_emacsdir() {
     PR="DIR \w DIR$PR"
 }
 
+# End the prompt with NEWLINE, closing any open segments
+prompt_end_with_newline() {
+    if [[ -n $CURRENT_BG ]]; then
+        declare -a codes=($(text_effect reset) $(fg_color $CURRENT_BG))
+        PR="$PR $(ansi codes[@])$SEGMENT_SEPARATOR"
+    fi
+    arrow="$(ansi_single $(fg_color green))❯"
+    [[ $RETVAL -ne 0 ]] && arrow="$(ansi_single $(fg_color red))❯"
+    declare -a reset=($(text_effect reset))
+    PR="$PR\\n$arrow $(ansi reset[@])"
+    CURRENT_BG=''
+}
+
 ######################################################################
 ## Main prompt
 
@@ -435,7 +448,8 @@ build_prompt() {
     # prompt_virtualenv
     prompt_dir
     prompt_git
-    prompt_end
+    # prompt_end
+    prompt_end_with_newline
 }
 
 # from orig...
