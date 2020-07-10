@@ -42,7 +42,7 @@ get_package_manager() {
 
 get_base() {
   # Install Dev Tools
-  if [[ $OS_NAME == "osx" ]]; then
+  if [[ $OS_NAME == "linux" ]]; then
     if [ "$DIST_NAME" = "ubuntu" ]; then
       sed -i 's/^override*/#&/' /etc/yum.conf
     fi
@@ -89,7 +89,7 @@ get_base() {
   fi
 
   # Install sudo
-  if [[ $OS_NAME != "osx" ]]; then
+  if [[ $DIST_NAME != "darwin" ]]; then
     $pkgmgr update -y
     $pkgmgr install sudo -y
   fi
@@ -131,7 +131,7 @@ gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
   fi
 
   # Install `gdircolors`: GNU `dircolors` alternative
-  if [[ "$OS_NAME" = "osx" && ! -x "$(which dircolors)" ]]; then
+  if [[ "$DIST_NAME" = "darwin" && ! -x "$(which dircolors)" ]]; then
     $pkgmgr install coreutils
     ln -s /usr/local/bin/gdircolors /usr/local/bin/dircolors
   fi
