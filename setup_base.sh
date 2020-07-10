@@ -42,24 +42,25 @@ get_package_manager() {
 
 get_base() {
   # Install Dev Tools
-  if [ "$DIST_NAME" = "ubuntu" ]; then
-    sed -i 's/^override*/#&/' /etc/yum.conf
-  fi
+  if [[ $OS_NAME == "osx" ]]; then
+    if [ "$DIST_NAME" = "ubuntu" ]; then
+      sed -i 's/^override*/#&/' /etc/yum.conf
+    fi
+    $pkgmgr update -y
+    $pkgmgr install vim zsh curl wget git man htop -y
+    if [ "$DIST_NAME" = "ubuntu" ]; then
+      $pkgmgr install build-essential -y
+      $pkgmgr install python3 -y
+    elif [ "$DIST_NAME" = "centos" ]; then
+      $pkgmgr group mark install "Development Tools"
+      $pkgmgr group update "Development Tools"
+      $pkgmgr groupinstall -y 'development tools'
+      $pkgmgr install sudo -y
+      $pkgmgr install python36u python36u-libs python36u-devel python36u-pip -y
+    fi
 
-  $pkgmgr update -y
-  $pkgmgr install vim zsh curl wget git man htop -y
-  if [ "$DIST_NAME" = "ubuntu" ]; then
-    $pkgmgr install build-essential -y
-    $pkgmgr install python3 -y
-  elif [ "$DIST_NAME" = "centos" ]; then
-    $pkgmgr group mark install "Development Tools"
-    $pkgmgr group update "Development Tools"
-    $pkgmgr groupinstall -y 'development tools'
-    $pkgmgr install sudo -y
-    $pkgmgr install python36u python36u-libs python36u-devel python36u-pip -y
+    $pkgmgr update -y
   fi
-
-  $pkgmgr update -y
 
   # Set Locales
   # LOCALE=ko_KR
@@ -88,14 +89,27 @@ get_base() {
   fi
 
   # Install sudo
-  $pkgmgr update -y
-  $pkgmgr install sudo -y
+  if [[ $OS_NAME != "osx" ]]; then
+    $pkgmgr update -y
+    $pkgmgr install sudo -y
+  fi
 
   # Install JDK
   if [ "$DIST_NAME" = "ubuntu" ]; then
-    $pkgmgr install openjdk-8-jdk -y --fix-missing
+    # $pkgmgr install openjdk-8-jdk -y --fix-missing
+    wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add -
+    add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
+    $pkgmgr install <adoptopenjdk-14-hotspot>
+
   elif [ "$DIST_NAME" = "centos" ]; then
-    $pkgmgr install java-1.8.0-openjdk java-1.8.0-openjdk-devel -y
+    repo_str="[AdoptOpenJDK]
+name=AdoptOpenJDK
+baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/$releasever/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
+    echo $repo_str >> /etc/yum.repos.d/adoptopenjdk.repo
+    $pkgmgr install adoptopenjdk-14-hotspot
   fi
 
   echo "$(which java)"
@@ -107,9 +121,11 @@ get_base() {
     echo "export JAVA_HOME=\"$JAVA_HOME\"" >> /etc/bashrc
   fi
 
-  $pkgmgr install vim ctags -y
-  if [[ -n $(which zsh) ]]; then
-    $pkgmgr install zsh -y
+  if [[ $OS_NAME != "linux" ]]; then
+    $pkgmgr install vim ctags -y
+    if [[ -n $(which zsh) ]]; then
+      $pkgmgr install zsh -y
+    fi
   fi
 
   # Install `gdircolors`: GNU `dircolors` alternative
