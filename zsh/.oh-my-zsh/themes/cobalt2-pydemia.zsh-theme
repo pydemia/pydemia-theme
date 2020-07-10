@@ -270,7 +270,7 @@ prompt_aws() {
 }
 
 
-prompt_newline() {
+prompt_end_with_newline() {
   if [[ -n $CURRENT_BG ]]; then
     echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%E\\n%(?.%F{$CURRENT_BG}.%F{red})❯%f"
   else
@@ -306,8 +306,8 @@ build_prompt() {
   prompt_bzr
   prompt_hg
   # prompt_rspec_stats
-  prompt_newline
-  prompt_end
+  # prompt_end
+  prompt_end_with_newline
 }
 
 
