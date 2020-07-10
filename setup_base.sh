@@ -110,6 +110,7 @@ get_base() {
   $pkgmgr install vim ctags -y
   if [[ -n $(which zsh) ]]; then
     $pkgmgr install zsh -y
+  fi
 
   # Install `gdircolors`: GNU `dircolors` alternative
   if [ "$OS_NAME" = "osx" && -x "$(which dircolors)" ]; then
