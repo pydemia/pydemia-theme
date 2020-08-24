@@ -1,13 +1,17 @@
 #!/bin/bash
 
 # Pydemia-theme
-work_dir="$PWD"
-if [[ work_dir =~ pydemia-theme ]]; then
-  git clone https://github.com/pydemia/pydemia-theme $HOME/.pydemia-theme
-  source_dir="$HOME/.pydemia-theme"
-else
-  source_dir=$work_dir
-fi
+# work_dir="$PWD"
+# if [[ work_dir =~ pydemia-theme ]]; then
+#   git clone https://github.com/pydemia/pydemia-theme $HOME/.pydemia-theme
+#   source_dir="$HOME/.pydemia-theme"
+# else
+#   source_dir=$work_dir
+# fi
+
+git clone https://github.com/pydemia/pydemia-theme $HOME/.pydemia-theme
+source_dir="$HOME/.pydemia-theme"
+source_dir=$work_dir
 
 install_vim() {
 
