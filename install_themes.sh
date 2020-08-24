@@ -11,7 +11,6 @@
 
 git clone https://github.com/pydemia/pydemia-theme $HOME/.pydemia-theme
 source_dir="$HOME/.pydemia-theme"
-source_dir=$work_dir
 
 install_vim() {
 
