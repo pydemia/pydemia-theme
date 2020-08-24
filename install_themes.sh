@@ -11,6 +11,7 @@
 
 git clone https://github.com/pydemia/pydemia-theme $HOME/.pydemia-theme
 SRC_DIR="$HOME/.pydemia-theme"
+echo "$SRC_DIR"
 
 install_vim() {
 
