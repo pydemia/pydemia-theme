@@ -10,7 +10,7 @@
 # fi
 
 git clone https://github.com/pydemia/pydemia-theme $HOME/.pydemia-theme
-source_dir="$HOME/.pydemia-theme"
+SRC_DIR="$HOME/.pydemia-theme"
 
 install_vim() {
 
@@ -42,8 +42,8 @@ install_zsh() {
   cd ..
   rm -rf ./fonts
 
-  cp $source_dir/zsh/.oh-my-zsh/themes/cobalt2-pydemia.zsh-theme ~/.oh-my-zsh/themes/
-  cp -r $source_dir/zsh/.pydemia-config ~/
+  cp $SRC_DIR/zsh/.oh-my-zsh/themes/cobalt2-pydemia.zsh-theme ~/.oh-my-zsh/themes/
+  cp -r $SRC_DIR/zsh/.pydemia-config ~/
   
   if [ "$OS_NAME" = "linux" ]; then
     sed -i 's/^ZSH_THEME*/#&/' ~/.zshrc
@@ -51,7 +51,7 @@ install_zsh() {
     sed -i '' 's/^ZSH_THEME*/#&/' ~/.zshrc
   fi
 
-  cat $source_dir/zsh/.zshrc >> ~/.zshrc
+  cat $SRC_DIR/zsh/.zshrc >> ~/.zshrc
   # echo "source ~/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
   # echo "source .pydemia-theme/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc:
 
@@ -68,7 +68,7 @@ install_zsh() {
 install_bash_theme() {
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
-  cp -r $source_dir/bash/.oh-my-bash/themes/cobalt2-pydemia ~/.oh-my-bash/themes/
+  cp -r $SRC_DIR/bash/.oh-my-bash/themes/cobalt2-pydemia ~/.oh-my-bash/themes/
   # cp -r ~/.pydemia-theme/bash/.pydemia-config ~/
   # echo "source ~/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
   #echo "source .pydemia-theme/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
@@ -79,7 +79,7 @@ install_bash_theme() {
     sed -i '' 's/^OSH_THEME*/#&/' ~/.bash_profile
   fi
 
-  cat $source_dir/bash/.bashrc >> ~/.bash_profile
+  cat $SRC_DIR/bash/.bashrc >> ~/.bash_profile
 
 }
 
