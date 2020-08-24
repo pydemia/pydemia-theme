@@ -118,6 +118,13 @@ THINGS NOT TO DO
 <b>Danger:</b> This alert box indicates a dangerous or potentially negative action.
 </div>
 
+```sh
+├── directory
+├── directory
+│   └── file
+└── file
+```
+
 
 ---
 
