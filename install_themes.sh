@@ -31,7 +31,9 @@ install_vim() {
   fi
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-  cp ~/.vimrc ~/.vimrc.old
+  if [[ -f ~/.vimrc ]]; then
+    ~/.vimrc.old
+  fi
   curl -sL https://raw.githubusercontent.com/pydemia/pydemia-theme/master/vim/.vimrc -o ~/.vimrc
 
   #vim -u "~/.vimrc" +PlugInstall +qall > /dev/null
