@@ -125,6 +125,7 @@ install_bash_theme() {
     rm -rf $HOME/.oh-my-bash
   fi
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+  exit
 
   cp -rf $SRC_DIR/bash/.oh-my-bash/themes/cobalt2-pydemia ~/.oh-my-bash/themes/
   # cp -r ~/.pydemia-theme/bash/.pydemia-config ~/
