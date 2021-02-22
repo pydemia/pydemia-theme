@@ -97,7 +97,7 @@ install_bash_theme() {
     sed -i '' 's/^OSH_THEME=.*/OSH_THEME="cobalt2-pydemia"/' ~/.bash_profile
   fi
 
-  echo "$(cat $SRC_DIR/bash/.bashrc)" >> ~/.bash_profile
+  # echo "$(cat $SRC_DIR/bash/.bashrc)" >> ~/.bash_profile
 
 }
 
