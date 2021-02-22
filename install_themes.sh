@@ -14,10 +14,10 @@ set -e
 get_os() {
   case $(uname | tr '[:upper:]' '[:lower:]') in
     linux*)
-      export OS_NAME=linux
+      OS_NAME=linux
       ;;
     darwin*)
-      export OS_NAME=osx
+      OS_NAME=osx
       ;;
     # msys*)
     #   export OS_NAME=windows
@@ -26,7 +26,7 @@ get_os() {
     #   export OS_NAME=notset
     #   ;;
   esac
-  echo "OS: $OS_NAME"
+  echo "$OS_NAME"
   # return OS_NAME
 }
 
@@ -37,7 +37,7 @@ get_distro() {
   else
     DIST_NAME=`awk -F= '/^ID=/{print $2}' /etc/*-release | sed 's/\"//g'`
   fi;
-  echo "Distro: $DIST_NAME"
+  echo "$DIST_NAME"
   # return DIST_NAME
 }
 
@@ -141,8 +141,8 @@ install_bash_theme() {
 ## Main Function
 install_themes() {
   RETVAL=$?
-  get_os
-  get_distro
+  OS_NAME=$(get_os)
+  DIST_NAME=$(get_distro)
   if ! command -v vim &> /dev/null
   then
     echo "`vim` not be found: skip settings for vim..."
