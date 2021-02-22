@@ -63,7 +63,7 @@ install_zsh() {
   rm -rf ./fonts
 
   ls -al  $SRC_DIR/zsh/.oh-my-zsh/themes/
-  cp $SRC_DIR/zsh/.oh-my-zsh/themes/* ~/.oh-my-zsh/themes/
+  cp -rf $SRC_DIR/zsh/.oh-my-zsh/themes/* ~/.oh-my-zsh/themes/
   cp -rf $SRC_DIR/zsh/.pydemia-config ~/
   
   if [ "$OS_NAME" = "linux" ]; then
@@ -109,11 +109,14 @@ install_themes() {
   RETVAL=$?
   if ! command -v vim &> /dev/null
   then
-      echo "`vim` not be found: skip settings for vim..."
+    echo "`vim` not be found: skip settings for vim..."
   else
     install_vim
   fi
-  install_zsh
+  if command -v zsh &> /dev/null
+  then
+    install_zsh
+  fi
   install_bash_theme
 }
 
