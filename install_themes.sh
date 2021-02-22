@@ -127,10 +127,10 @@ install_bash_theme() {
   # cp -r ~/.pydemia-theme/bash/.pydemia-config ~/
   # echo "source ~/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
   #echo "source .pydemia-theme/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-
-  if [ "$OS_NAME" = "linux" ]; then
+  echo $OS_NAME
+  if [ "$OS_NAME" == "linux" ]; then
     sed -i 's/^OSH_THEME=.*/OSH_THEME="cobalt2-pydemia"/' ~/.bashrc
-  elif [ "$OS_NAME" = "osx" ]; then
+  elif [ "$OS_NAME" == "osx" ]; then
     sed -i '' 's/^OSH_THEME=.*/OSH_THEME="cobalt2-pydemia"/' ~/.bash_profile
   fi
 
