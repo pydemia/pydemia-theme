@@ -107,7 +107,6 @@ install_themes() {
   if ! command -v vim &> /dev/null
   then
       echo "`vim` not be found: skip settings for vim..."
-      exit
   else
     install_vim
   fi
