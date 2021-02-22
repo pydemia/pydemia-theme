@@ -104,7 +104,13 @@ install_bash_theme() {
 ## Main Function
 install_themes() {
   RETVAL=$?
-  install_vim
+  if ! command -v vim &> /dev/null
+  then
+      echo "`vim` not be found: skip settings for vim..."
+      exit
+  else
+    install_vim
+  fi
   install_zsh
   install_bash_theme
 }
