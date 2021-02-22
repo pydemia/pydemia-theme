@@ -80,8 +80,7 @@ install_zsh() {
   fi
 
   # Install Oh-My-Zsh
-  sh -c "$(sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true; exit)"
-  exit
+  sh -c "$(sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true; exit; exit)"
 
   # Install Fonts
   cd $HOME
@@ -125,8 +124,7 @@ install_bash_theme() {
   if [[ -d "$HOME/.oh-my-bash" ]]; then
     rm -rf $HOME/.oh-my-bash
   fi
-  bash -c "$(bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"; exit)"
-  exit
+  bash -c "$(bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"; exit; exit)"
 
   cp -rf $SRC_DIR/bash/.oh-my-bash/themes/cobalt2-pydemia ~/.oh-my-bash/themes/
   # cp -r ~/.pydemia-theme/bash/.pydemia-config ~/
