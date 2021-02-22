@@ -69,7 +69,7 @@ install_zsh() {
     sed -i '' 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
   fi
 
-  echo "$(cat $SRC_DIR/zsh/.zshrc)" >> ~/.zshrc
+  # echo "$(cat $SRC_DIR/zsh/.zshrc)" >> ~/.zshrc
   # echo "source ~/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
   # echo "source .pydemia-theme/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc:
 
