@@ -87,6 +87,9 @@ install_zsh() {
 }
 
 install_bash_theme() {
+  if [[ -d ~/.oh-my-bash ]]; then
+    rm -rf ~/.oh-my-bash
+  fi
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
   cp -rf $SRC_DIR/bash/.oh-my-bash/themes/cobalt2-pydemia ~/.oh-my-bash/themes/
