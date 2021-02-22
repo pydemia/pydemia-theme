@@ -10,6 +10,37 @@ set -e
 #   source_dir=$work_dir
 # fi
 
+# Get OS
+get_os() {
+  case $(uname | tr '[:upper:]' '[:lower:]') in
+    linux*)
+      export OS_NAME=linux
+      ;;
+    darwin*)
+      export OS_NAME=osx
+      ;;
+    # msys*)
+    #   export OS_NAME=windows
+    #   ;;
+    # *)
+    #   export OS_NAME=notset
+    #   ;;
+  esac
+  echo "OS: $OS_NAME"
+  # return OS_NAME
+}
+
+# Get Linux Distribution
+get_distro() {
+  if [[ $OS_NAME == "osx" ]]; then
+    DIST_NAME="darwin"
+  else
+    DIST_NAME=`awk -F= '/^ID=/{print $2}' /etc/*-release | sed 's/\"//g'`
+  fi;
+  echo "Distro: $DIST_NAME"
+  # return DIST_NAME
+}
+
 if [[ -d "$HOME/.pydemia-theme" ]]; then
   rm -rf $HOME/.pydemia-theme
 fi
@@ -110,6 +141,8 @@ install_bash_theme() {
 ## Main Function
 install_themes() {
   RETVAL=$?
+  get_os
+  get_distro
   if ! command -v vim &> /dev/null
   then
     echo "`vim` not be found: skip settings for vim..."
