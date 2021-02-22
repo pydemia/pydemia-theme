@@ -156,8 +156,10 @@ install_themes() {
   if command -v zsh &> /dev/null
   then
     install_zsh
+    exec zsh; source ~/.zshrc
   fi
   install_bash_theme
+  exec bash; source ~/.bashrc
 }
 
 install_themes
