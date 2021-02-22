@@ -32,7 +32,7 @@ install_vim() {
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
   if [[ -f ~/.vimrc ]]; then
-    ~/.vimrc.old
+    mv ~/.vimrc ~/.vimrc.old
   fi
   curl -sL https://raw.githubusercontent.com/pydemia/pydemia-theme/master/vim/.vimrc -o ~/.vimrc
 
