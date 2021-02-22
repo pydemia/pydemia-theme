@@ -47,7 +47,6 @@ if [[ -d "$HOME/.pydemia-theme" ]]; then
 fi
 git clone https://github.com/pydemia/pydemia-theme $HOME/.pydemia-theme
 
-ls -al $SRC_DIR
 SRC_DIR="$HOME/.pydemia-theme"
 echo "SOURCE DIR: $SRC_DIR"
 
@@ -121,10 +120,11 @@ install_zsh() {
 
 install_bash_theme() {
   OS_NAME="$(get_os)"
+  
   if [[ -d "$HOME/.oh-my-bash" ]]; then
     rm -rf $HOME/.oh-my-bash
   fi
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
   cp -rf $SRC_DIR/bash/.oh-my-bash/themes/cobalt2-pydemia ~/.oh-my-bash/themes/
   # cp -r ~/.pydemia-theme/bash/.pydemia-config ~/
@@ -152,6 +152,7 @@ install_themes() {
   else
     install_vim
   fi
+  
   if command -v zsh &> /dev/null
   then
     install_zsh
