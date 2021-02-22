@@ -32,6 +32,7 @@ get_os() {
 
 # Get Linux Distribution
 get_distro() {
+  OS_NAME="$(get_os)"
   if [[ $OS_NAME == "osx" ]]; then
     DIST_NAME="darwin"
   else
@@ -73,6 +74,7 @@ install_vim() {
 
 install_zsh() {
 
+  OS_NAME="$(get_os)"
   if command -v zsh &> /dev/null
   then
     [[ $SHELL != /bin/zsh ]] && echo "Set 'zsh' as default shell..." && chsh -s $(which zsh)
@@ -118,6 +120,7 @@ install_zsh() {
 }
 
 install_bash_theme() {
+  OS_NAME="$(get_os)"
   if [[ -d "$HOME/.oh-my-bash" ]]; then
     rm -rf $HOME/.oh-my-bash
   fi
@@ -127,10 +130,10 @@ install_bash_theme() {
   # cp -r ~/.pydemia-theme/bash/.pydemia-config ~/
   # echo "source ~/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
   #echo "source .pydemia-theme/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-  echo $OS_NAME
-  if [ "$OS_NAME" == "linux" ]; then
+
+  if [ "$OS_NAME" = "linux" ]; then
     sed -i 's/^OSH_THEME=.*/OSH_THEME="cobalt2-pydemia"/' ~/.bashrc
-  elif [ "$OS_NAME" == "osx" ]; then
+  elif [ "$OS_NAME" = "osx" ]; then
     sed -i '' 's/^OSH_THEME=.*/OSH_THEME="cobalt2-pydemia"/' ~/.bash_profile
   fi
 
@@ -141,8 +144,8 @@ install_bash_theme() {
 ## Main Function
 install_themes() {
   RETVAL=$?
-  OS_NAME=$(get_os)
-  DIST_NAME=$(get_distro)
+  OS_NAME="$(get_os)"
+  DIST_NAME="$(get_distro)"
   if ! command -v vim &> /dev/null
   then
     echo "`vim` not be found: skip settings for vim..."
