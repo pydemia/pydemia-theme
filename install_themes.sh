@@ -10,7 +10,7 @@ set -e
 #   source_dir=$work_dir
 # fi
 
-if [ -d "$HOME/.pydemia-theme" ]; then
+if [[ -d "$HOME/.pydemia-theme" ]]; then
   rm -rf $HOME/.pydemia-theme
 fi
 git clone https://github.com/pydemia/pydemia-theme $HOME/.pydemia-theme
@@ -25,7 +25,7 @@ install_vim() {
   mkdir -p ~/.vim/bundle
 
   curl -sL https://raw.githubusercontent.com/pydemia/pydemia-theme/master/vim/.vim/colors/cobalt2.vim -o ~/.vim/colors/cobalt2.vim
-  if [ -d "$HOME/.vim/bundle/Vundle.vim" ]
+  if [[ -d "$HOME/.vim/bundle/Vundle.vim" ]]
   then
     rm -rf ~/.vim/bundle/Vundle.vim
   fi
@@ -52,7 +52,7 @@ install_zsh() {
 
   # Install Fonts
   cd $HOME
-  if [ -d "$HOME/fonts" ]
+  if [[ -d "$HOME/fonts" ]]
   then
     rm -rf $HOME/fonts
   fi
@@ -66,9 +66,9 @@ install_zsh() {
   cp -rf $SRC_DIR/zsh/.oh-my-zsh/themes/* ~/.oh-my-zsh/themes/
   cp -rf $SRC_DIR/zsh/.pydemia-config ~/
   
-  if [ "$OS_NAME" = "linux" ]; then
+  if [[ "$OS_NAME" = "linux" ]]; then
     sed -i 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
-  elif [ "$OS_NAME" = "osx" ]; then
+  elif [[ "$OS_NAME" = "osx" ]]; then
     sed -i '' 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
   fi
 
@@ -76,7 +76,7 @@ install_zsh() {
   # echo "source ~/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
   # echo "source .pydemia-theme/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc:
 
-  if [ -f ~/.zcompdump ]; then
+  if [[ -f ~/.zcompdump ]]; then
     rm -f ~/.zcompdump*
   fi
   # if type -p java; then
@@ -87,7 +87,7 @@ install_zsh() {
 }
 
 install_bash_theme() {
-  if [ -d "$HOME/.oh-my-bash" ]; then
+  if [[ -d "$HOME/.oh-my-bash" ]]; then
     rm -rf $HOME/.oh-my-bash
   fi
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
