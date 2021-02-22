@@ -87,8 +87,8 @@ install_zsh() {
 }
 
 install_bash_theme() {
-  if [[ -d ~/.oh-my-bash ]]; then
-    rm -rf ~/.oh-my-bash
+  if [ -d "$HOME/.oh-my-bash" ]; then
+    rm -rf $HOME/.oh-my-bash
   fi
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 
