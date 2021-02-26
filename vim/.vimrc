@@ -41,6 +41,9 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" set <leader> key
+let mapleader=","
+
 " set nerdcommenter
 " Create default mappings
 let g:NERDCreateDefaultMappings = 1
