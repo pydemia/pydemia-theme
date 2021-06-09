@@ -71,7 +71,7 @@ install_vim() {
   vim -c 'PluginInstall' -c 'qa!'
   
   git clone https://github.com/rapphil/vim-python-ide.git vim-python-ide && \
-  cd vim-python-ide && echo ""| echo ""| ./install.sh && \
+  cd vim-python-ide && echo ""| echo ""| ./install.sh
   cd .. && rm -rf vim-python-ide && \
   sed -i 's/^colorscheme cobalt2/"colorscheme Monokai\ncolorscheme cobalt2/' ~/.vimrc
 }
