@@ -126,6 +126,8 @@ gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public"
     sudo $pkgmgr install vim ctags -y
     if [[ -n $(which zsh) ]]; then
       sudo $pkgmgr install zsh -y
+      # to avoid chsh:PAM authentication failed: /etc/pam.d/chsh
+      sed -i "s/^auth.*pam_shells.so/^#auth.*pam_shells.so/g" /etc/pam.d/chsh
     fi
   fi
 
