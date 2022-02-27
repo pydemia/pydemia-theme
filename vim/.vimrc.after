@@ -23,7 +23,7 @@ call plug#end()
 
 " Theme options
 set t_Co=256
-colorscheme Monokai
+colorscheme cobalt2
 set background=dark    " Setting dark mode
 """ Hilight search and set numbers
 set hlsearch
