@@ -72,6 +72,9 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
 
+" Enable NERDTreeShowHidden to check all se
+let g:NERDTreeShowHidden=1
+
 " Set Plugin: Start -----------
 
 " let Vundle manage Vundle, required
