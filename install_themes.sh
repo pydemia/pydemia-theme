@@ -81,8 +81,12 @@ install_zsh() {
   OS_NAME="$(get_os)"
   if command -v zsh &> /dev/null
   then
-    [[ $SHELL != /bin/zsh ]] && echo "Set 'zsh' as default shell..." && chsh -s $(which zsh)
+    echo "'zsh' should be installed before run this."
+  else
+    [[ $SHELL != /bin/zsh ]] && echo "'zsh' is not set as default shell"
+    # sudo chsh -s $(which zsh)
   fi
+  
 
   # Install Oh-My-Zsh
   exit | sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" || true
