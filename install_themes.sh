@@ -64,11 +64,13 @@ install_vim() {
 
   if [[ -f ~/.vimrc ]]; then
     mv ~/.vimrc ~/.vimrc.old
+    curl -sL https://raw.githubusercontent.com/pydemia/pydemia-theme/master/vim/.vimrc.before -o ~/.vimrc
   fi
-  curl -sL https://raw.githubusercontent.com/pydemia/pydemia-theme/master/vim/.vimrc -o ~/.vimrc
 
   #vim -u "~/.vimrc" +PlugInstall +qall > /dev/null
   vim -c 'PluginInstall' -c 'qa!'
+  
+  curl -sL https://raw.githubusercontent.com/pydemia/pydemia-theme/master/vim/.vimrc.after -o ~/.vimrc
   
   git clone https://github.com/rapphil/vim-python-ide.git vim-python-ide && \
   cd vim-python-ide && echo ""| echo ""| ./install.sh
