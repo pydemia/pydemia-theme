@@ -72,13 +72,13 @@ install_vim() {
   
   curl -sL https://raw.githubusercontent.com/pydemia/pydemia-theme/master/vim/.vimrc.after -o ~/.vimrc
   
-  if [[ -d "./vim-python-ide" ]]; then
-    rm -rf ./vim-python-ide
-  fi
-  git clone https://github.com/rapphil/vim-python-ide.git ./vim-python-ide && \
-  cd ./vim-python-ide && echo ""| echo ""| ./install.sh
-  cd .. && rm -rf vim-python-ide && \
-  sed -i 's/^colorscheme cobalt2/"colorscheme Monokai\ncolorscheme cobalt2/' ~/.vimrc
+#   if [[ -d "./vim-python-ide" ]]; then
+#     rm -rf ./vim-python-ide
+#   fi
+#   git clone https://github.com/rapphil/vim-python-ide.git ./vim-python-ide && \
+#   cd ./vim-python-ide && echo ""| echo ""| ./install.sh
+#   cd .. && rm -rf vim-python-ide && \
+  sed -i 's/^colorscheme Monokai/"colorscheme Monokai\ncolorscheme cobalt2/' ~/.vimrc
 }
 
 install_zsh() {
