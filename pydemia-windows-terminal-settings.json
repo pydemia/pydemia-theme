@@ -9,14 +9,6 @@
                 "action": "copy",
                 "singleLine": false
             },
-            "keys": "ctrl+c"
-        },
-        {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
             "keys": "ctrl+insert"
         },
         {
@@ -28,6 +20,18 @@
             "keys": "ctrl+plus"
         },
         {
+            "command": "unbound",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+w"
+        },
+        {
             "command": 
             {
                 "action": "switchToTab",
@@ -37,11 +41,18 @@
         },
         {
             "command": "paste",
-            "keys": "ctrl+v"
+            "keys": "shift+insert"
         },
         {
-            "command": "paste",
-            "keys": "shift+insert"
+            "command": 
+            {
+                "action": "scrollUp"
+            },
+            "keys": "ctrl+shift+up"
+        },
+        {
+            "command": "openNewTabDropdown",
+            "keys": "ctrl+shift+space"
         },
         {
             "command": 
@@ -52,19 +63,12 @@
             "keys": "alt+shift+d"
         },
         {
-            "command": "openNewTabDropdown",
-            "keys": "ctrl+shift+space"
-        },
-        {
             "command": 
             {
-                "action": "scrollUp"
+                "action": "moveFocus",
+                "direction": "right"
             },
-            "keys": "ctrl+shift+up"
-        },
-        {
-            "command": "closeWindow",
-            "keys": "alt+f4"
+            "keys": "alt+right"
         },
         {
             "command": 
@@ -75,12 +79,8 @@
             "keys": "alt+left"
         },
         {
-            "command": 
-            {
-                "action": "moveFocus",
-                "direction": "right"
-            },
-            "keys": "alt+right"
+            "command": "closeWindow",
+            "keys": "alt+f4"
         },
         {
             "command": "find",
@@ -111,7 +111,7 @@
             {
                 "action": "closeTab"
             },
-            "keys": "ctrl+w"
+            "keys": "ctrl+shift+w"
         },
         {
             "command": 
