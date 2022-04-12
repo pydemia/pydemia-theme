@@ -85,6 +85,12 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
             }
         ]
     },
@@ -102,14 +108,14 @@
             "brightBlue": "#62ade3",
             "brightCyan": "#94d8e5",
             "brightGreen": "#b7eb46",
-            "brightPurple": "#bfa0fe",
+            "brightPurple": "#AD7FA8",
             "brightRed": "#ff5995",
             "brightWhite": "#f8f8f2",
             "brightYellow": "#feed6c",
-            "cyan": "#56c2d6",
+            "cyan": "#06989A",
             "foreground": "#CCCCCC",
             "green": "#82b414",
-            "purple": "#8c54fe",
+            "purple": "#75507B",
             "red": "#f92672",
             "white": "#ccccc6",
             "yellow": "#fd971f"
@@ -208,8 +214,8 @@
         // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
         // These two lines additionally bind them to Ctrl+C and Ctrl+V.
         // To learn more about selection, visit https://aka.ms/terminal-selection
-        { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-        { "command": "paste", "keys": "ctrl+v" },
+        { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+shift+c" },
+        { "command": "paste", "keys": "ctrl+shift+v" },
 
         // Press Ctrl+Shift+F to open the search box
         { "command": "find", "keys": "ctrl+shift+f" },
