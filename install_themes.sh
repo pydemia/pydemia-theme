@@ -76,8 +76,8 @@ install_vim() {
 
   if [[ -f ~/.vimrc ]]; then
     mv ~/.vimrc ~/.vimrc.old
-    curl -sL https://raw.githubusercontent.com/pydemia/pydemia-theme/master/vim/.vimrc.before -o ~/.vimrc
   fi
+  curl -sL https://raw.githubusercontent.com/pydemia/pydemia-theme/master/vim/.vimrc.before -o ~/.vimrc
 
   #vim -u "~/.vimrc" +PlugInstall +qall > /dev/null
   vim -c 'PluginInstall' -c 'qa!'
