@@ -82,7 +82,7 @@ install_vim() {
   #vim -u "~/.vimrc" +PlugInstall +qall > /dev/null
   vim -c 'PluginInstall' -c 'qa!'
   
-  #curl -sL https://raw.githubusercontent.com/pydemia/pydemia-theme/master/vim/.vimrc.after -o ~/.vimrc
+  curl -sL https://raw.githubusercontent.com/pydemia/pydemia-theme/master/vim/.vimrc.after -o ~/.vimrc
   
 #   if [[ -d "./vim-python-ide" ]]; then
 #     rm -rf ./vim-python-ide
@@ -90,7 +90,7 @@ install_vim() {
 #   git clone https://github.com/rapphil/vim-python-ide.git ./vim-python-ide && \
 #   cd ./vim-python-ide && echo ""| echo ""| ./install.sh
 #   cd .. && rm -rf vim-python-ide && \
-  sed_i 's/^colorscheme Monokai/"colorscheme Monokai\ncolorscheme cobalt2/' ~/.vimrc
+#   sed_i 's/^colorscheme Monokai/"colorscheme Monokai\ncolorscheme cobalt2/' ~/.vimrc
 }
 
 install_zsh() {
