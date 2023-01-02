@@ -43,12 +43,12 @@ get_distro() {
 
 }
 
-get_distro
+get_os
 # Making alias work in bash script
 shopt -s expand_aliases
 
 # sed: GNU vs BSD
-if [[ $DIST_NAME == "darwin" ]]; then
+if [[ $OS_NAME == "osx" ]]; then
   alias sed_i="sed -i '' "
 else
   alias sed_i="sed -i "
@@ -123,12 +123,8 @@ install_zsh() {
   ls -al  $SRC_DIR/zsh/.oh-my-zsh/themes/
   cp -rf $SRC_DIR/zsh/.oh-my-zsh/themes/* ~/.oh-my-zsh/themes/
   cp -rf $SRC_DIR/zsh/.pydemia-config ~/
-  
-  if [[ "$OS_NAME" = "linux" ]]; then
-    sed_i 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
-  elif [[ "$OS_NAME" = "osx" ]]; then
-    sed_i 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
-  fi
+
+  sed_i 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
 
   # echo "$(cat $SRC_DIR/zsh/.zshrc)" >> ~/.zshrc
   # echo "source ~/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
