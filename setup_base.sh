@@ -36,7 +36,12 @@ get_package_manager() {
   case "$DIST_NAME" in
     "ubuntu") pkgmgr="apt-get" ;;
     "centos") pkgmgr="yum" ;;
-    "centos") pkgmgr="brew" ;;
+    "darwin")
+      pkgmgr="brew"
+      if ! [ -x "$(command -v ${pkgmgr})" ]; then
+        bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+      fi
+    ;;
   esac
 }
 
