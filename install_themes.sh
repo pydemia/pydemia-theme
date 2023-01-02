@@ -127,7 +127,7 @@ install_zsh() {
   if [[ "$OS_NAME" = "linux" ]]; then
     sed_i 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
   elif [[ "$OS_NAME" = "osx" ]]; then
-    sed_i '' 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
+    sed_i 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
   fi
 
   # echo "$(cat $SRC_DIR/zsh/.zshrc)" >> ~/.zshrc
