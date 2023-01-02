@@ -1,0 +1,362 @@
+# If you come from bash you might have to change your $PATH.
+
+# source /etc/bash.bashrc
+#source ~/.bashrc
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+alias shopt='/usr/bin/shopt'
+
+# Path to your oh-my-zsh installation.
+export ZSH=/home/pydemia/.oh-my-zsh
+
+alias sudo='sudo '
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="cobalt2"
+ZSH_THEME="cobalt2-pydemia"
+#ZSH_THEME="agnoster"
+eval `dircolors ~/.pydemia-config/.dircolors`
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+source /home/pydemia/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+  ssh-agent
+  history
+  kubectl
+  kubetail
+)
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/pydemia/apps/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/pydemia/apps/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/pydemia/apps/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/pydemia/apps/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+
+source $ZSH/oh-my-zsh.sh
+
+
+# User configuration
+
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+#export LC_COLLATE="en_US.UTF-8"
+#export LC_CTYPE=="en_US.UTF-8"
+#export LC_MESSAGES="en_US.UTF-8"
+#export LC_MONETARY="en_US.UTF-8"
+#export LC_NUMERIC="en_US.UTF-8"
+#export LC_TIME="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+### User-Defined Envs
+# JAVA
+export JAVA_HOME="/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
+export JDK_HOME="/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
+export PATH="${JAVA_HOME}/bin:${PATH}"
+
+### CUDA PATH
+source "$HOME/envs/cuda-10.0.env"
+
+
+export APP_PATH="$HOME/apps"
+
+# added by Anaconda3 4.3.0 installer
+export PYTHONPATH="$APP_PATH/anaconda3/bin/python:${PYTHONPATH}"
+export CONDA_PATH="$APP_PATH/anaconda3"
+# export PATH="$APP_PATH/anaconda3/bin:$PATH"  # commented out by conda initialize
+export CONDA_ENV_PATH="$APP_PATH/anaconda3/envs"
+
+# PyPy PATH
+export PATH="$APP_PATH/pypy3/bin:$PATH"
+export PYPY_PATH="$APP_PATH/pypy3"
+
+# JULIA PATH
+export PATH="$APP_PATH/julia/bin:$PATH"
+
+
+# SCALA PATH
+export PATH="$APP_PATH/scala/bin:$PATH"
+export SCALA_VERSION_FOR_ALMOND=2.12.8
+export ALMOND_VERSION=0.5.0
+
+# CAFFE PATH
+#export CAFFE_HOME="$APP_PATH/caffe"
+
+# Jupyter-Kernelspec
+#export PATH="$APP_PATH/anaconda3/bin/jupyter-kernelspec:$PATH"
+
+
+## Oracle Instant Client PATH
+#export ORACLE_HOME="$APP_PATH/instantclient_11_2"
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME
+
+
+# Create environment variable for correct distribution
+export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+alias  SSH_GCLOUD_GPU='gcloud compute --project "pydemia-cloud" ssh --zone "us-central1-c" "pydemia-gpu"'
+alias  SSH_GCLOUD_GPU_SK='gcloud compute --project "pydemia-cloud" ssh --zone "us-central1-c" "pydemia-gpu"'
+
+# export TMP_LOC="$APP_PATH/anaconda3/envs/tf-py36/bin/python"
+
+# set PYPATH for vscode dynamical python path
+# "python.pythonPath": "${env:PYTHON_INSTALL_LOC}"
+
+# if [ -z "$CONDA_PREFIX" ]
+# then
+#     export PYTHON_INSTALL_LOC="$PYTHONPATH"
+# else
+#     export PYTHONPATH_OLD="$PYTHONPATH"
+#     export PYTHON_INSTALL_LOC="$CONDA_PREFIX/bin/python"
+#     export PYTHONPATH="$PYTHON_INSTALL_LOC"
+#
+# #printf "'PYTHON_INSTALL_LOC': %s" $PYTHON_INSTALL_LOC
+# fi
+# echo "\$PYTHONPATH: $PYTHONPATH"
+export CONDA_EXEC_PATH="$APP_PATH/anaconda3/bin/conda"
+
+#export DOCKER_HOST=tcp://127.0.0.1:2375
+#export DOCKER_OPTS="-H tcp://127.0.0.1:2375"
+
+alias vsci-remote-settings='vim ~/.vscode-remote/data/Machine/settings.json'
+
+
+alias nblog="bash -c 'cp ~/.jupyter/logs/notebook.log ~/.jupyter/logs/_tmp.log; vim ~/.jupyter/logs/_tmp.log'"
+
+alias get_mindmap="zsh -c 'source ~/.zshrc; conda activate mindmap; python ~/git/mindmap/run.py; conda deactivate;'"
+
+alias docker_rm_untagged='docker rmi $(docker images | grep "^<none>" | awk "{print $3}") && docker image prune -f'
+alias docker_rm_after_build='docker images -f "dangling=true" -q'
+alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+
+alias openssl="/usr/bin/openssl"
+
+# # Setup for `ssh-agent` -> plugins=(... ssh-agent)
+# if [ -z "$SSH_AUTH_SOCK" ]
+# then
+#    # Check for a currently running instance of the agent
+#    RUNNING_AGENT="`ps -ax | grep 'ssh-agent -s' | grep -v grep | wc -l | tr -d '[:space:]'`"
+#    if [ "$RUNNING_AGENT" = "0" ]
+#    then
+#         # Launch a new instance of the agent
+#         ssh-agent -s &> .ssh/ssh-agent
+#    fi
+#    eval `cat .ssh/ssh-agent`
+# fi
+#
+
+
+#export DOCKER_HOST="tcp://0.0.0.0:2376"
+#export VSCODE_DOCKER_HOST="ssh://..."
+export VIRTUAL_ENV_DISABLE_PROMPT=yes
+
+export PATH="$HOME/.local/bin:$HOME/.local/bin/Kui-linux-x64:${PATH}"
+
+alias cd-kb="cd ~/git/containers/kubernetes"
+alias cd-kf="cd ~/git/containers/kubernetes/apps/kubeflow"
+alias cd-kfs="cd ~/git/containers/kubernetes/apps/kfserving"
+alias cd-ka="cd ~/git/containers/kubernetes/apps"
+
+alias kc-air1="gcloud beta compute ssh airuntime@airuntime-appserver-v1 --project=ds-ai-platform --zone=asia-northeast3-a"
+alias kc-kf2="gcloud container clusters get-credentials kfserving-riesling --region us-central1 --project ds-ai-platform"
+
+alias kc-aiip-dev="aws eks update-kubeconfig --name aiip-dev --profile yjkim1-aiip"
+alias kc-aiip-dev-m="aws eks update-kubeconfig --name aiip-dev --profile aiip-master"
+alias kc-aiip-stg="aws eks update-kubeconfig --name aiip-stage --profile yjkim1-aiip"
+alias kc-aiip-stg-m="aws eks update-kubeconfig --name aiip-stage --profile aiip-master"
+alias kc-aiip-stg-es="aws eks update-kubeconfig --name aiip-stage-es --profile yjkim1-aiip"
+alias kc-aiip-prd-bst="ssh -i ~/.ssh/aiip-prd-yjkim1-bastion.pem yj.kim1@13.124.2.235"
+alias kc-aiip-prd="aws eks update-kubeconfig --name aiip-prod --profile aiip-yjkim1-prd"
+alias kc-offline="gcloud beta compute ssh --zone "asia-northeast3-a" "offline-test" --project "ds-ai-platform""
+alias kc-skc="ssh -i "~/.ssh/skc-coc-keypair.pem" ubuntu@ec2-13-124-28-195.ap-northeast-2.compute.amazonaws.com"
+alias kc-aiip-coc="aws eks update-kubeconfig --name coc-skep-aiip --profile coc"
+alias kc-aiip-wf-dev="aws eks update-kubeconfig --name aiip-workflow-py-dev --profile yjkim1-aiip"
+alias kc-kind="kubectl config use-context kind-kind-local"
+
+
+alias gcloud-offline="gcloud beta compute ssh --zone "asia-northeast3-a" "offline-test" --project "ds-ai-platform""
+
+alias kubectl-me="kubectl config current-context;kubectl cluster-info"
+alias kme="kubectl-me"
+
+source <(kubectl completion zsh)
+
+export GO_HOME="${HOME}/.local/go"
+export PATH="${GO_HOME}/bin:${PATH}"
+##### $GOPATH must not be set to $GOROOT
+export GOPATH="${HOME}/.gopath"
+export GOROOT="${GO_HOME}"
+export PATH="${GOPATH}/bin:${PATH}"
+
+# kubectl -n ifsvc run --rm -i --tty temp --command /bin/bash --image python:3.7-slim
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/pydemia/.sdkman"
+[[ -s "/home/pydemia/.sdkman/bin/sdkman-init.sh" ]] && source "/home/pydemia/.sdkman/bin/sdkman-init.sh"
+
+alias k="kubectl"
+
+function kns () { kubectl config set-context --current --namespace="$1" }
+
+# "kubectl -n istio-system get gw ingress-prd -o jsonpath='{.metadata.annotations.kubectl\.kubernetes\.io/last-applied-configuration}' | yq -y"
+function kx () {
+  NAMESPACE="$1"
+  # SELECTOR="model=skh-bch-003"
+  SELECTOR="$2"
+  CMD="${3:-/bin/bash}"
+  kubectl -n ${NAMESPACE} exec --stdin --tty "$(kubectl -n ${NAMESPACE} get pods -l ${SELECTOR} -o jsonpath="{.items[0].metadata.name}")" -- ${CMD}
+}
+
+function kxc () {
+  NAMESPACE="$1"
+  # SELECTOR="model=skh-bch-003"
+  SELECTOR="$2"
+  CONTAINER="$3"
+  CMD="${4:-/bin/bash}"
+  kubectl -n ${NAMESPACE} exec --stdin --tty "$(kubectl -n ${NAMESPACE} get pods -l ${SELECTOR} -o jsonpath='{.items[0].metadata.name}')" -c ${CONTAINER} -- ${CMD}
+}
+
+function kxp () {
+  NAMESPACE="$1"
+  # SELECTOR="model=skh-bch-003"
+  PODNAME="$2"
+  CONTAINER="$3"
+  CMD="${4:-/bin/bash}"
+  kubectl -n ${NAMESPACE} exec --stdin --tty ${PODNAME} -c ${CONTAINER} -- ${CMD}
+}
+
+function kdb () {
+  NAMESPACE="${1:-default}"
+  SA="${2:-default}"
+  kubectl -n ${NAMESPACE} run --rm -it debug --image=pydemia/debug --restart=Never --serviceaccount=${SA}
+}
+
+function kdbs () {
+  NAMESPACE="${1:-default}"
+  SA="${2:-default}"
+  kubectl -n ${NAMESPACE} run --rm -it debug --image=pydemia/debug-slim --restart=Never --serviceaccount=${SA}
+}
+
+export GPG_TTY=$(tty)
+alias showgpg="echo "" | gpg --clearsign"
+alias sgsg="showgpg"
+alias restartgpg="gpgconf --kill gpg-agent"
+
+alias dsort="du -hsc * | sort -h"
+alias fsort="ls -lSr --block-size=GB"
+
+
+function b64e() {
+  echo `echo ${1}|base64`
+}
+
+
+function b64d() {
+  echo `echo ${1}|base64 -d`
+}
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
