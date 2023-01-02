@@ -40,18 +40,19 @@ get_distro() {
   fi;
   echo "$DIST_NAME"
   # return DIST_NAME
-  
-  # Making alias work in bash script
-  shopt -s expand_aliases
-
-  # sed: GNU vs BSD
-  if [[ $DIST_NAME == "darwin" ]]; then
-    alias sed_i="sed -i '' "
-  else
-    alias sed_i="sed -i "
-  fi
 
 }
+
+get_distro
+# Making alias work in bash script
+shopt -s expand_aliases
+
+# sed: GNU vs BSD
+if [[ $DIST_NAME == "darwin" ]]; then
+  alias sed_i="sed -i '' "
+else
+  alias sed_i="sed -i "
+fi
 
 if [[ -d "$HOME/.pydemia-theme" ]]; then
   rm -rf $HOME/.pydemia-theme
