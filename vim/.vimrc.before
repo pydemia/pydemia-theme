@@ -94,6 +94,20 @@ Plugin 'scrooloose/syntastic'
 " Comment functions so powerful
 Plugin 'scrooloose/nerdcommenter'
 
+Plugin 'davidhalter/jedi-vim'
+Plugin 'SirVer/ultisnips', { 'commit': 'a909dee82b6eaaa3ae001e27c3e95c58d487d242'}
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-fugitive'
+Plugin 'w0rp/ale'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'majutsushi/tagbar'
+
 " Set Plugin: End -------------
 
 call vundle#end()            " required
