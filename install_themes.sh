@@ -42,6 +42,13 @@ get_distro() {
   # return DIST_NAME
 }
 
+# sed: GNU vs BSD
+if [[ $DIST_NAME == "darwin" ]]; then
+  alias sed_i="sed -i '' "
+else
+  alias sed_i="sed -i "
+fi
+
 if [[ -d "$HOME/.pydemia-theme" ]]; then
   rm -rf $HOME/.pydemia-theme
 fi
@@ -78,7 +85,7 @@ install_vim() {
 #   git clone https://github.com/rapphil/vim-python-ide.git ./vim-python-ide && \
 #   cd ./vim-python-ide && echo ""| echo ""| ./install.sh
 #   cd .. && rm -rf vim-python-ide && \
-  sed -i 's/^colorscheme Monokai/"colorscheme Monokai\ncolorscheme cobalt2/' ~/.vimrc
+  sed_i 's/^colorscheme Monokai/"colorscheme Monokai\ncolorscheme cobalt2/' ~/.vimrc
 }
 
 install_zsh() {
@@ -113,9 +120,9 @@ install_zsh() {
   cp -rf $SRC_DIR/zsh/.pydemia-config ~/
   
   if [[ "$OS_NAME" = "linux" ]]; then
-    sed -i 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
+    sed_i 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
   elif [[ "$OS_NAME" = "osx" ]]; then
-    sed -i '' 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
+    sed_i '' 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
   fi
 
   # echo "$(cat $SRC_DIR/zsh/.zshrc)" >> ~/.zshrc
@@ -146,9 +153,9 @@ install_bash_theme() {
   #echo "source .pydemia-theme/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
   echo $OS_NAME
   if [ "$OS_NAME" = "linux" ]; then
-    sed -i 's/^OSH_THEME=.*/OSH_THEME="cobalt2-pydemia"/' ~/.bashrc
+    sed_i 's/^OSH_THEME=.*/OSH_THEME="cobalt2-pydemia"/' ~/.bashrc
   elif [ "$OS_NAME" = "osx" ]; then
-    sed -i '' 's/^OSH_THEME=.*/OSH_THEME="cobalt2-pydemia"/' ~/.bash_profile
+    sed_i '' 's/^OSH_THEME=.*/OSH_THEME="cobalt2-pydemia"/' ~/.bash_profile
   fi
 
   # echo "$(cat $SRC_DIR/bash/.bashrc)" >> ~/.bash_profile
