@@ -77,6 +77,7 @@ vmap <F4> "+gP
 imap <F4> <ESC> "+gPi
 map <F2> :NERDTreeToggle<CR>
 nmap <F8> :Tlist<CR>
+map <C-u> :set number! <CR>
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
