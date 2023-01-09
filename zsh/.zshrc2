@@ -88,6 +88,38 @@ plugins=(
   kubetail
 )
 
+# f not running interactively, don't do anything
+# [ -z "$PS1" ] && return
+
+# export PS1="\[\e[31m\]tf-docker\[\e[m\] \[\e[33m\]\w\[\e[m\] > "
+# export TERM=xterm-256color
+alias grep="grep --color=auto"
+alias ls="ls --color=auto"
+
+echo -e "\e[1;31m"
+
+# MOTD message
+printf '%s' "$GREEN"
+printf '%s\n' '_________             __                             '
+printf '%s\n' '___/ __  /___________/ /________________________     '
+printf '%s\n' '__/ /_/ // / / // __  // _ \ / __ `__ \_/_// __ `    '
+printf '%s\n' '_/  ___// /_/ // / /_//  __// / / / / // // /_/ |    '
+printf '%s\n' '/__/    \__, / \____/ \___//_/ /_/ /_//_/ \___,_\    '
+printf '%s\n' '       /____/                                        '
+printf "%s\n"
+printf "${BLUE}${BOLD}%s${NORMAL}\n" "$(lsb_release -icrd)"
+
+echo -e "\e[0;33m"
+
+cat <<WARN
+NOTICE:
+To use 'gcloud'   : gcloud init
+To use 'aws cli'  : aws configure
+To use 'azure cli': azure login
+WARN
+
+# Turn off colors
+echo -e "\e[m"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -356,6 +388,15 @@ function b64e() {
 function b64d() {
   echo `echo ${1}|base64 -d`
 }
+
+alias dsort="du -hsc * | sort -h"
+alias fsort="ls -lSr --block-size=GB"
+
+alias docker_rm_untagged='docker rmi $(docker images | grep "^<none>" | awk "{print $3}") && docker image prune -f'
+alias docker_rm_after_build='docker images -f "dangling=true" -q'
+alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
