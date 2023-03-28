@@ -96,18 +96,38 @@ plugins=(
 alias grep="grep --color=auto"
 alias ls="ls --color=auto"
 
-echo -e "\e[1;31m"
+export LSCOLORS=Exgxbxdxcxegedabagacad
 
-# MOTD message
-printf '%s' "$GREEN"
-printf '%s\n' '_________             __                             '
-printf '%s\n' '___/ __  /___________/ /________________________     '
-printf '%s\n' '__/ /_/ // / / // __  // _ \ / __ `__ \_/_// __ `    '
-printf '%s\n' '_/  ___// /_/ // / /_//  __// / / / / // // /_/ |    '
-printf '%s\n' '/__/    \__, / \____/ \___//_/ /_/ /_//_/ \___,_\    '
-printf '%s\n' '       /____/                                        '
-printf "%s\n"
-printf "${BLUE}${BOLD}%s${NORMAL}\n" "$(lsb_release -icrd)"
+echo -e "\e[1;31m"
+# Get OS
+get_os() {
+  case $(uname | tr '[:upper:]' '[:lower:]') in
+    linux*)
+      OS_NAME=linux
+      ;;
+    darwin*)
+      OS_NAME=osx
+      ;;
+    # msys*)
+    #   export OS_NAME=windows
+    #   ;;
+    # *)
+    #   export OS_NAME=notset
+    #   ;;
+  esac
+  # echo "$OS_NAME"
+  # return OS_NAME
+}
+
+get_os
+
+if [[ $OS_NAME == "osx" ]]; then
+    alias get_os_info="sw_vers "
+else
+    alias get_os_info="lsb_release -icrd "
+fi
+
+printf "${BLUE}${BOLD}%s${NORMAL}\n" "$(get_os_info)"
 
 echo -e "\e[0;33m"
 
