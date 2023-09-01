@@ -37,6 +37,7 @@ else
       source "$(dirname "$(which conda)")/../etc/"profile.d/conda.sh && \
       conda activate "$CONDA_ENV_NM_NEW" && \
       python -m ipykernel install \
+        --user \
         --name "$CONDA_ENV_NM_NEW" \
         --display-name "${CONDA_ENV_NM_NEW} (conda env)" && \
       pip install -r "$PIP_PKG_REQ" && \
@@ -51,6 +52,7 @@ else
       source "$(dirname "$(which conda)")/../etc/"profile.d/conda.sh && \
       conda activate "$CONDA_ENV_NM_NEW" && \
       python -m ipykernel install \
+        --user \
         --name "$CONDA_ENV_NM_NEW" \
         --display-name "${CONDA_ENV_NM_NEW} (conda env)" && \
       conda deactivate
@@ -63,6 +65,7 @@ else
       source "$(dirname "$(which conda)")/../etc/"profile.d/conda.sh && \
       conda activate "$CONDA_ENV_NM_NEW" && \
       python -m ipykernel install \
+        --user \
         --name "$CONDA_ENV_NM_NEW" \
         --display-name "${CONDA_ENV_NM_NEW} (conda env)" && \
       pip install -r "$PIP_PKG_REQ" && \
@@ -75,6 +78,7 @@ else
       source "$(dirname "$(which conda)")/../etc/"profile.d/conda.sh && \
       conda activate "$CONDA_ENV_NM_NEW" && \
       python -m ipykernel install \
+        --user \
         --name "$CONDA_ENV_NM_NEW" \
         --display-name "${CONDA_ENV_NM_NEW} (conda env)" && \
       conda deactivate
