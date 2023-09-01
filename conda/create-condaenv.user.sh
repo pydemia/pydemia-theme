@@ -40,7 +40,7 @@ else
         --user \
         --name "$CONDA_ENV_NM_NEW" \
         --display-name "${CONDA_ENV_NM_NEW} (conda env)" && \
-      pip install -r "$PIP_PKG_REQ" && \
+      pip install --user -r "$PIP_PKG_REQ" && \
       conda deactivate
   elif [ -f "$BASE_ENVFILE" ] && [ ! -f "$PIP_PKG_REQ" ] ; then
     printf "Found: [$BASE_ENVFILE]\n"
