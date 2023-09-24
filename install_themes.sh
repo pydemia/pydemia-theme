@@ -154,7 +154,7 @@ install_bash_theme() {
   #echo "source .pydemia-theme/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
   echo $OS_NAME
   if [ "$OS_NAME" = "linux" ]; then
-    sed_i 's/^OSH_THEME=.*/OSH_THEME="cobalt2-pydemia"/' ~/.bashrc
+    sed -i 's/^OSH_THEME=.*/OSH_THEME="cobalt2-pydemia"/' ~/.bashrc
   elif [ "$OS_NAME" = "osx" ]; then
     sed_i 's/^OSH_THEME=.*/OSH_THEME="cobalt2-pydemia"/' ~/.bash_profile
   fi
