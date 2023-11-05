@@ -1,10 +1,8 @@
 # pydemia-theme
 
 ```sh
-git clone https://github.com/pydemia/pydemia-theme
-cd pydemia-theme
-sudo ./setup_base.sh
-./install_themes.sh
+# curl -sL https://raw.githubusercontent.com/pydemia/pydemia-theme/master/setup_base.sh | sudo bash
+curl -sL https://raw.githubusercontent.com/pydemia/pydemia-theme/master/install_themes.sh | bash
 ```
 
 * [`bash`]()
