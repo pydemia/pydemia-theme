@@ -7,7 +7,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "Plugin 'python-rope/ropevim'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'SirVer/ultisnips', { 'commit': 'a909dee82b6eaaa3ae001e27c3e95c58d487d242'}
+"Plugin 'SirVer/ultisnips', { 'commit': 'a909dee82b6eaaa3ae001e27c3e95c58d487d242'}
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-fugitive'
 Plugin 'w0rp/ale'
@@ -119,10 +119,10 @@ let g:ale_set_highlights = 0
 " Fix keys
 set backspace=2
 
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsListSnippets='<c-tab>'
-let g:UltiSnipsJumpForwardTrigger='<c-j>'
-let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+"let g:UltiSnipsExpandTrigger='<tab>'
+"let g:UltiSnipsListSnippets='<c-tab>'
+"let g:UltiSnipsJumpForwardTrigger='<c-j>'
+"let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 nmap <F8> :TagbarToggle<CR>
 
