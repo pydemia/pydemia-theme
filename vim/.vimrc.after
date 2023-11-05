@@ -5,7 +5,7 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'python-rope/ropevim'
+"Plugin 'python-rope/ropevim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'SirVer/ultisnips', { 'commit': 'a909dee82b6eaaa3ae001e27c3e95c58d487d242'}
 Plugin 'honza/vim-snippets'
@@ -111,9 +111,9 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%] [%...code...%]'
 """" Enable completion where available.
 let g:ale_completion_enabled = 1
 """ Customize linters that are turned on
-let g:ale_linters = {
-        \   'python': ['flake8'],
-        \}
+"let g:ale_linters = {
+"        \   'python': ['flake8'],
+"        \}
 let g:ale_set_highlights = 0
 
 " Fix keys
