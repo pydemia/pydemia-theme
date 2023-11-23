@@ -124,8 +124,11 @@ install_zsh() {
   cp -rf $SRC_DIR/zsh/.oh-my-zsh/themes/* ~/.oh-my-zsh/themes/
   cp -rf $SRC_DIR/zsh/.pydemia-config ~/
 
-  sed_i 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
-
+  if [ "$OS_NAME" = "linux" ]; then
+    sed -i 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
+  elif [ "$OS_NAME" = "osx" ]; then
+    sed_i 's/^ZSH_THEME=.*/ZSH_THEME="cobalt2-pydemia"/' ~/.zshrc
+  fi
   # echo "$(cat $SRC_DIR/zsh/.zshrc)" >> ~/.zshrc
   # echo "source ~/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
   # echo "source .pydemia-theme/.pydemia-config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc:
