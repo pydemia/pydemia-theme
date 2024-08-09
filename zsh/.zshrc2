@@ -409,6 +409,7 @@ function b64d() {
   echo `echo ${1}|base64 -d`
 }
 
+alias findport="lsof -i -P | grep LISTEN | grep "
 alias dsort="du -hsc * | sort -h"
 alias fsort="ls -lSr --block-size=GB"
 
