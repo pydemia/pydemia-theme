@@ -36,7 +36,7 @@ set hlsearch
 highlight Search guibg=#af005f ctermbg=125
 """" clear highlight with <esc> after a search
 nnoremap <C-h> :noh<return>
-set number!
+"set number
 set cc=80
 
 
