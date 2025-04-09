@@ -37,6 +37,7 @@ highlight Search guibg=#af005f ctermbg=125
 """" clear highlight with <esc> after a search
 nnoremap <C-h> :noh<return>
 "set number
+"set relativenumber
 set cc=80
 
 
@@ -77,7 +78,8 @@ vmap <F4> "+gP
 imap <F4> <ESC> "+gPi
 map <F2> :NERDTreeToggle<CR>
 nmap <F8> :Tlist<CR>
-map <C-u> :set number! <CR>
+map <C-u> :set number <CR>
+map <C-y> :set number <CR>
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
