@@ -325,9 +325,12 @@ __command_rprompt() {
     for tz in ZRH:Europe/Zurich PIT:US/Eastern \
               MTV:US/Pacific TOK:Asia/Tokyo; do
         [ $n -gt 40 ] || break
+        # times="$times ${tz%%:*}\e[30;1m:\e[0;36;1m"
+        # times="$times$(TZ=${tz#*:} date +%H:%M)\e[0m"
         times="$times ${tz%%:*}\e[30;1m:\e[0;36;1m"
-        times="$times$(TZ=${tz#*:} date +%H:%M)\e[0m"
-        n=$(( $n - 10 ))
+        times="$times$(TZ=${tz#*:} date +'%a %m/%d %H:%M')\e[0m"
+        # n=$(( $n - 10 ))
+        n=$(( $n - 21 ))
     done
     [ -z "$times" ] || printf "%${n}s$times\\r" ''
 }
