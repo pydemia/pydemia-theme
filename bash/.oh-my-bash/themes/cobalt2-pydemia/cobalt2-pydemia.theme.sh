@@ -473,6 +473,7 @@ set_bash_prompt() {
     
     # left prompt
     PS1=$PR
+    __command_rprompt
 }
 
 
