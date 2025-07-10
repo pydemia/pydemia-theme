@@ -322,8 +322,7 @@ rightprompt() {
 # quick right prompt I grabbed to test things.
 __command_rprompt() {
     local times= n=$COLUMNS tz
-    for tz in ZRH:Europe/Zurich PIT:US/Eastern \
-              MTV:US/Pacific TOK:Asia/Tokyo; do
+    for tz in KST:Asia/Seoul UTC:UTC; do
         [ $n -gt 40 ] || break
         # times="$times ${tz%%:*}\e[30;1m:\e[0;36;1m"
         # times="$times$(TZ=${tz#*:} date +%H:%M)\e[0m"
