@@ -141,6 +141,8 @@ WARN
 # Turn off colors
 echo -e "\e[m"
 
+export VIRTUAL_ENV_DISABLE_PROMPT=true
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/pydemia/apps/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
