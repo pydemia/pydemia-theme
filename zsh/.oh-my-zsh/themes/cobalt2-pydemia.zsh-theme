@@ -240,18 +240,21 @@ prompt_virtualenv() {
   fi
 }
 
+
 prompt_python_venv() {
   # local virtualenv_path="$VIRTUAL_ENV"
   local python_venv=""
   local color=cyan
-  # export VIRTUAL_ENV_DISABLE_PROMPT=yes
-  if [[ -n $VIRTUAL_ENV && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-      python_venv="$VIRTUAL_ENV"
-      prompt_segment $color black "$(basename $VIRTUAL_ENV)"
+  export VIRTUAL_ENV_DISABLE_PROMPT=true
+  # if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
+  if [[ -n $VIRTUAL_ENV ]]; then
+      python_venv_path="$(basename $VIRTUAL_ENV)"
+      python_venv=`basename "$(dirname $VIRTUAL_ENV)"`
+      prompt_segment $color black "[v]$(basename $python_venv)"
   elif [[ -n $CONDA_DEFAULT_ENV ]]; then
       python_venv="$CONDA_DEFAULT_ENV"
       conda config --set changeps1 False
-      prompt_segment $color black "$CONDA_DEFAULT_ENV" # "(`basename $CONDA_DEFAULT_ENV`)"
+      prompt_segment $color black "[c]$CONDA_DEFAULT_ENV" # "(`basename $CONDA_DEFAULT_ENV`)"
   fi
 }
 
