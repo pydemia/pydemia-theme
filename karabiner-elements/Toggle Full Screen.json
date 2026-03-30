@@ -1,0 +1,21 @@
+{
+    "description": "Toggle Full Screen (ctrl+shift+f to ctrl+cmd+f)",
+    "manipulators": [
+        {
+            "from": {
+                "key_code": "f",
+                "modifiers": {
+                    "mandatory": ["control", "shift"],
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "f",
+                    "modifiers": ["control", "command"]
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}
