@@ -1,0 +1,17 @@
+{
+    "description": "R_ALT to switch input languages as it is in Windows (especially Korean)",
+    "manipulators": [
+        {
+            "from": { "key_code": "right_alt" },
+            "to": [
+                {
+                    "key_code": "spacebar",
+                    "lazy": true,
+                    "modifiers": ["left_control", "left_alt"],
+                    "repeat": false
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}
