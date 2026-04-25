@@ -33,3 +33,6 @@ Category colors — master table
 14	okabe-ito	#D55E00	#E69F00	#0072B2	#CC79A7	#009E73	#999999
 15	colorbrewer-dark2	#E7298A	#D95F02	#1B9E77	#7570B3	#66A61E	#666666
 Proposed VS Code setting
+
+![listed-colormap](listed-colormap.png)
+
