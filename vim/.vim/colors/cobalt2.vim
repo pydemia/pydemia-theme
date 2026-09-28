@@ -263,18 +263,18 @@ let g:grey = "7797B3"                                                  " #7797B3
 let g:light_grey = "A6BED0"                                            " #A6BED0
 let g:lighter_grey = "D4E5F2"                                          " #D4E5F2
 let g:lightest_grey = "F2F7FF"                                         " #F2F7FF
-let g:white = "F2F7FF"                                                 " #F2F7FF
+let g:white = "FFFFFF"                                                 " #FFFFFF
 
 let g:dark_orange = "FF9D00"                                           " #FF9D00
-let g:light_orange = "FFB454"                                          " #FFB454
-let g:yellow = "FFE55C"                                                " #FFE55C
-let g:class_yellow = "FFC600"                                          " #FFC600
+let g:light_orange = "FD971F"                                          " #FD971F
+let g:yellow = "FFDD00"                                                " #FFDD00
+let g:class_yellow = "D7BA7D"                                          " #D7BA7D
 let g:light_yellow = "FFF099"                                          " #FFF099
 
 let g:darkest_green = "23422F"                                         " #23422F
 let g:dirty_green = "6FA67E"                                           " #6FA67E
-let g:green = "63DE42"                                                 " #63DE42
-let g:light_green = "8EF065"                                           " #8EF065
+let g:green = "3AD900"                                                 " #3AD900
+let g:light_green = "88FF88"                                           " #88FF88
 let g:lighter_green = "C9ECC0"                                         " #C9ECC0
 let g:lightest_green = "DDF5D7"                                        " #DDF5D7
 
@@ -284,12 +284,12 @@ let g:light_purple = "D7BFF7"                                          " #D7BFF7
 
 let g:darkest_blue = "0D2840"                                          " #0D2840
 let g:darker_blue = "205276"                                           " #205276
-let g:dark_blue = "388DD8"                                             " #388DD8
-let g:blue = "69BFFF"                                                  " #69BFFF
-let g:light_blue = "A1D7FF"                                            " #A1D7FF
+let g:dark_blue = "0088FF"                                             " #0088FF
+let g:blue = "00AAFF"                                                  " #00AAFF
+let g:light_blue = "80FCFF"                                            " #80FCFF
 let g:greyish_blue = "7797B3"                                          " #7797B3
 let g:dirty_blue = "708EA6"                                            " #708EA6
-let g:cyan = "80FCFF"                                                  " #80FCFF
+let g:cyan = "06A6A8"                                                  " #06A6A8
 
 let g:aubergine =  "4A2739"                                            " #4A2739
 let g:darker_red = "4A2739"                                            " #4A2739
@@ -297,7 +297,10 @@ let g:dark_red = "6C354A"                                              " #6C354A
 let g:red = "FF4F70"                                                   " #FF4F70
 let g:dark_pink = "FF628C"                                             " #FF628C
 let g:pink = "F92672"                                                  " #F92672
-let g:property_pink = "FB94FF"                                         " #FB94FF
+let g:property_pink = "FFDBC7"                                         " #FFDBC7
+let g:variable_pink = "FB94FF"                                         " #FB94FF
+let g:parameter_pink = "F4ABA4"                                        " #F4ABA4
+let g:call_yellow = "FFC600"                                           " #FFC600
 let g:light_pink = "F6A4BE"                                            " #F6A4BE
 let g:lightest_pink = "FAD0DB"                                         " #FAD0DB
 let g:pale_pink = "E8A5B9"                                             " #E8A5B9
@@ -326,9 +329,9 @@ call s:X("Delimiter",g:dirty_blue,"","","Grey","")
 call s:X("String",g:green,"","","Green","")
 hi! link StringDelimiter Delimiter
 
-call s:X("Identifier",g:white,"","","White","")
+call s:X("Identifier",g:variable_pink,"","","Magenta","")
 call s:X("Structure",g:class_yellow,"","italic","Yellow","")
-call s:X("Function",g:blue,"","","Blue","")
+call s:X("Function",g:call_yellow,"","","Yellow","")
 call s:X("Statement",g:dark_orange,"","","","")
 call s:X("PreProc",g:dark_orange,"","",g:dark_orange,"")
 call s:X("Operator",g:white,"","italic","White","")
@@ -344,7 +347,7 @@ call s:X("Directory",g:blue,"","","Blue","")
 call s:X("ErrorMsg","",g:dark_red,"","","DarkRed")
 hi! link Error ErrorMsg
 call s:X("Question",g:green,"","","Green","")
-call s:X("StorageClass",g:light_orange,"","","","")
+call s:X("StorageClass",g:dark_orange,"","","","")
 
 " vim tabpane headers
 call s:X("TabLine",g:black,g:lighter_grey,"italic","","Black")
@@ -416,14 +419,14 @@ hi! link pythonOperator Statement
 call s:X("rubyClass",g:class_yellow,"","","Yellow","")
 hi! link rubyModule rubyClass
 
-call s:X("rubyInstanceVariable",g:lightest_grey,"","","Cyan","")
+call s:X("rubyInstanceVariable",g:variable_pink,"","","Magenta","")
 call s:X("rubySymbol",g:salmon,"","","Magenta","")
 hi! link rubyGlobalVariable rubyInstanceVariable
 
 call s:X("rubyAccess",g:white,"","","","")
 
 " params between pipes after do, and pipes themselfs
-call s:X("rubyBlockParameter",g:lightest_grey,"","","Blue","")
+call s:X("rubyBlockParameter",g:parameter_pink,"","","Magenta","")
 call s:X("rubyBlockParameterList",g:white,"","","Blue","")
 
 call s:X("rubyInterpolation",g:lighter_green,"","","Magenta","")
@@ -443,12 +446,12 @@ hi! link javaScriptValue Constant
 hi! link javaScriptRegexpString rubyRegexp
 
 call s:X("jsFunction",g:pink,"","","","")
-call s:X("jsFuncCall",g:blue,"","","","")
-call s:X("jsOperator",g:light_orange,"","","","")
+call s:X("jsFuncCall",g:call_yellow,"","","","")
+call s:X("jsOperator",g:white,"","","","")
 call s:X("jsStorageClass",g:dark_orange,"","","","")
-call s:X("jsFuncArgs",g:lightest_grey,"","","","")
+call s:X("jsFuncArgs",g:parameter_pink,"","","","")
 
-call s:X("jsBuiltins",g:white,"","italic","","")
+call s:X("jsBuiltins",g:dark_orange,"","italic","","")
 call s:X("jsUndefined",g:salmon,"","","","")
 call s:X("jsThis",g:light_pink,"","","","")
 call s:X("jsPrototype",g:property_pink,"","","","")
