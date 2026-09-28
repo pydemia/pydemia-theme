@@ -1,35 +1,35 @@
 {
   "Ansi 1 Color" : {
-    "Green Component" : 0.44313725490196076,
-    "Blue Component" : 0.5333333333333333,
-    "Red Component" : 1
+    "Green Component" : 0.3843137254901961,
+    "Blue Component" : 0.5490196078431373,
+    "Red Component" : 1.0
   },
   "Tags" : [
 
   ],
   "Ansi 12 Color" : {
-    "Green Component" : 0.8235294117647058,
-    "Blue Component" : 0.9607843137254902,
-    "Red Component" : 0.6431372549019608
+    "Green Component" : 0.7490196078431373,
+    "Blue Component" : 1.0,
+    "Red Component" : 0.4117647058823529
   },
   "Horizontal Spacing" : 1,
   "Normal Font" : "SourceCodeProForPowerline-Regular 14",
   "Bold Color" : {
-    "Green Component" : 0.9176470588235294,
-    "Blue Component" : 0.9529411764705882,
-    "Red Component" : 0.8549019607843137
+    "Green Component" : 0.9686274509803922,
+    "Blue Component" : 1.0,
+    "Red Component" : 0.9490196078431372
   },
   "Link Color" : {
-    "Red Component" : 0.49019607843137253,
+    "Red Component" : 0.4117647058823529,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.9215686274509803,
+    "Blue Component" : 1.0,
     "Alpha Component" : 1,
-    "Green Component" : 0.7411764705882353
+    "Green Component" : 0.7490196078431373
   },
   "Ansi 4 Color" : {
-    "Green Component" : 0.7411764705882353,
-    "Blue Component" : 0.9215686274509803,
-    "Red Component" : 0.49019607843137253
+    "Green Component" : 0.5333333333333333,
+    "Blue Component" : 1.0,
+    "Red Component" : 0.0
   },
   "Right Option Key Sends" : 0,
   "Rows" : 25,
@@ -37,16 +37,16 @@
   "Cursor Guide Color" : {
     "Red Component" : 0.12549019607843137,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.41568627450980394,
+    "Blue Component" : 0.4627450980392157,
     "Alpha Component" : 0.25,
-    "Green Component" : 0.2980392156862745
+    "Green Component" : 0.3215686274509804
   },
   "Non-ASCII Anti Aliased" : true,
   "Use Bright Bold" : true,
   "Ansi 10 Color" : {
-    "Green Component" : 0.9019607843137255,
-    "Blue Component" : 0.6549019607843137,
-    "Red Component" : 0.7254901960784313
+    "Green Component" : 0.9411764705882353,
+    "Blue Component" : 0.396078431372549,
+    "Red Component" : 0.5568627450980392
   },
   "Ambiguous Double Width" : false,
   "Jobs to Ignore" : [
@@ -56,14 +56,14 @@
     "telnet"
   ],
   "Ansi 15 Color" : {
-    "Green Component" : 1,
-    "Blue Component" : 1,
-    "Red Component" : 1
+    "Green Component" : 1.0,
+    "Blue Component" : 1.0,
+    "Red Component" : 1.0
   },
   "Foreground Color" : {
-    "Green Component" : 0.9176470588235294,
-    "Blue Component" : 0.9529411764705882,
-    "Red Component" : 0.8549019607843137
+    "Green Component" : 0.9686274509803922,
+    "Blue Component" : 1.0,
+    "Red Component" : 0.9490196078431372
   },
   "Working Directory" : "\/Users\/pydemia",
   "Blinking Cursor" : false,
@@ -76,17 +76,17 @@
   "Mouse Reporting" : true,
   "Screen" : -1,
   "Selection Color" : {
-    "Green Component" : 0.2980392156862745,
-    "Blue Component" : 0.41568627450980394,
+    "Green Component" : 0.3215686274509804,
+    "Blue Component" : 0.4627450980392157,
     "Red Component" : 0.12549019607843137
   },
   "Only The Default BG Color Uses Transparency" : false,
   "Columns" : 80,
   "Idle Code" : 0,
   "Ansi 13 Color" : {
-    "Green Component" : 0.6980392156862745,
-    "Blue Component" : 0.8980392156862745,
-    "Red Component" : 0.9058823529411765
+    "Green Component" : 0.7568627450980392,
+    "Blue Component" : 1.0,
+    "Red Component" : 1.0
   },
   "Custom Command" : "No",
   "ASCII Anti Aliased" : true,
@@ -95,20 +95,20 @@
   "Use Bold Font" : true,
   "Option Key Sends" : 0,
   "Selected Text Color" : {
-    "Green Component" : 0.9176470588235294,
-    "Blue Component" : 0.9529411764705882,
-    "Red Component" : 0.8549019607843137
+    "Green Component" : 0.9686274509803922,
+    "Blue Component" : 1.0,
+    "Red Component" : 0.9490196078431372
   },
   "Background Color" : {
-    "Green Component" : 0.10588235294117647,
-    "Blue Component" : 0.17254901960784313,
+    "Green Component" : 0.1450980392156863,
+    "Blue Component" : 0.2235294117647059,
     "Red Component" : 0.027450980392156862
   },
   "Character Encoding" : 4,
   "Ansi 11 Color" : {
-    "Green Component" : 0.8745098039215686,
-    "Blue Component" : 0.6274509803921569,
-    "Red Component" : 0.9607843137254902
+    "Green Component" : 0.9411764705882353,
+    "Blue Component" : 0.6,
+    "Red Component" : 1.0
   },
   "Use Italic Font" : true,
   "Unlimited Scrollback" : false,
@@ -283,11 +283,11 @@
   "Background Image Location" : "",
   "Blur" : false,
   "Badge Color" : {
-    "Red Component" : 1,
+    "Red Component" : 1.0,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.5333333333333333,
+    "Blue Component" : 0.4392156862745098,
     "Alpha Component" : 0.5,
-    "Green Component" : 0.44313725490196076
+    "Green Component" : 0.30980392156862746
   },
   "Scrollback Lines" : 1000,
   "Send Code When Idle" : false,
@@ -297,65 +297,65 @@
   "Flashing Bell" : false,
   "Silence Bell" : false,
   "Ansi 14 Color" : {
-    "Green Component" : 0.8862745098039215,
-    "Blue Component" : 0.9019607843137255,
-    "Red Component" : 0.6274509803921569
+    "Green Component" : 1.0,
+    "Blue Component" : 1.0,
+    "Red Component" : 0.7058823529411765
   },
   "Name" : "Cobalt9",
   "Cursor Text Color" : {
-    "Green Component" : 0.10588235294117647,
-    "Blue Component" : 0.17254901960784313,
+    "Green Component" : 0.1450980392156863,
+    "Blue Component" : 0.2235294117647059,
     "Red Component" : 0.027450980392156862
   },
   "Minimum Contrast" : 0,
   "Shortcut" : "",
   "Cursor Color" : {
-    "Green Component" : 0.7803921568627451,
-    "Blue Component" : 0.4745098039215686,
-    "Red Component" : 0.9176470588235294
+    "Green Component" : 0.7764705882352941,
+    "Blue Component" : 0.0,
+    "Red Component" : 1.0
   },
   "Ansi 0 Color" : {
-    "Green Component" : 0.23921568627450981,
-    "Blue Component" : 0.3254901960784314,
-    "Red Component" : 0.12941176470588237
+    "Green Component" : 0.23529411764705882,
+    "Blue Component" : 0.3411764705882353,
+    "Red Component" : 0.09019607843137255
   },
   "Guid" : "CB2AB099-8B78-477B-AA5B-30F205B6D4EE",
   "Ansi 2 Color" : {
-    "Green Component" : 0.8196078431372549,
-    "Blue Component" : 0.5529411764705883,
-    "Red Component" : 0.615686274509804
+    "Green Component" : 0.8509803921568627,
+    "Blue Component" : 0.0,
+    "Red Component" : 0.22745098039215686
   },
   "Ansi 3 Color" : {
-    "Green Component" : 0.8117647058823529,
-    "Blue Component" : 0.4,
-    "Red Component" : 0.9568627450980393
+    "Green Component" : 0.7764705882352941,
+    "Blue Component" : 0.0,
+    "Red Component" : 1.0
   },
   "Custom Directory" : "No",
   "Ansi 5 Color" : {
-    "Green Component" : 0.5607843137254902,
-    "Blue Component" : 0.8470588235294118,
-    "Red Component" : 0.8196078431372549
+    "Green Component" : 0.5803921568627451,
+    "Blue Component" : 1.0,
+    "Red Component" : 0.984313725490196
   },
   "Use Non-ASCII Font" : false,
   "Ansi 7 Color" : {
-    "Green Component" : 0.9176470588235294,
-    "Blue Component" : 0.9529411764705882,
-    "Red Component" : 0.8549019607843137
+    "Green Component" : 0.9372549019607843,
+    "Blue Component" : 1.0,
+    "Red Component" : 0.8823529411764706
   },
   "Ansi 8 Color" : {
-    "Green Component" : 0.5333333333333333,
-    "Blue Component" : 0.615686274509804,
-    "Red Component" : 0.42745098039215684
+    "Green Component" : 0.5568627450980392,
+    "Blue Component" : 0.6509803921568628,
+    "Red Component" : 0.4392156862745098
   },
   "Ansi 9 Color" : {
-    "Green Component" : 0.5764705882352941,
-    "Blue Component" : 0.6352941176470588,
-    "Red Component" : 1
+    "Green Component" : 0.5686274509803921,
+    "Blue Component" : 0.6862745098039216,
+    "Red Component" : 1.0
   },
   "Ansi 6 Color" : {
-    "Green Component" : 0.796078431372549,
-    "Blue Component" : 0.8274509803921568,
-    "Red Component" : 0.45098039215686275
+    "Green Component" : 0.9882352941176471,
+    "Blue Component" : 1.0,
+    "Red Component" : 0.5019607843137255
   },
   "Transparency" : 0.055518321700507613
 }
