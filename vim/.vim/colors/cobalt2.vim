@@ -250,54 +250,58 @@ fun! s:X(group, fg, bg, attr, lcfg, lcbg)
 endfun
 
 if !exists("g:cobalt_bg")
-  let g:cobalt_bg = "193549"                                            "#193549
+  let g:cobalt_bg = "071B2C"                                            "#071B2C
 end
+let g:cobalt_line = "10273B"
 
 " General colors
-let g:black = "1C1C1C"                                                 " #1C1C1C
-let g:darkest_grey = "3A3A3A"                                          " #303030
-let g:darker_grey = "444444"                                           " #444444
-let g:dark_grey = "626262"                                             " #626262
-let g:grey = "808080"                                                  " #808080
-let g:light_grey = "9E9E9E"                                            " #9E9E9E
-let g:lighter_grey = "BCBCBC"                                          " #BCBCBC
-let g:lightest_grey = "CCCCCC"                                         " #CCCCCC
-let g:white = "FFFFFF"                                                 " #FFFFFF
+let g:black = "071B2C"                                                 " #071B2C
+let g:darkest_grey = "102B42"                                          " #102B42
+let g:darker_grey = "17364E"                                           " #17364E
+let g:dark_grey = "6D889D"                                             " #6D889D
+let g:grey = "82A3B8"                                                  " #82A3B8
+let g:light_grey = "A5BBCA"                                            " #A5BBCA
+let g:lighter_grey = "C4D4DE"                                          " #C4D4DE
+let g:lightest_grey = "DAEAF3"                                         " #DAEAF3
+let g:white = "DAEAF3"                                                 " #DAEAF3
 
-let g:dark_orange = "FF9A00"                                           " #FF9A00
-let g:light_orange = "FF9D00"                                          " #FF9D00
-let g:yellow = "FFC600"                                                " #FFC600
-let g:light_yellow = "F2ED7F"                                          " #F2ED7F
+let g:dark_orange = "F7A865"                                           " #F7A865
+let g:light_orange = "F7A865"                                          " #F7A865
+let g:yellow = "F4CF66"                                                " #F4CF66
+let g:class_yellow = "F0D77F"                                          " #F0D77F
+let g:light_yellow = "F5DFA0"                                          " #F5DFA0
 
-let g:darkest_green = "2D7067"                                         " #2D7067
-let g:dirty_green = "70b950"                                           " #70b950
-let g:green = "3AD900"                                                 " #3AD900
-let g:light_green = "88FF88"                                           " #88FF88
-let g:lighter_green = "9EFF80"                                         " #9EFF80
-let g:lightest_green = "BBFFDD"                                        " #BBFFDD
+let g:darkest_green = "23422F"                                         " #23422F
+let g:dirty_green = "6FA67E"                                           " #6FA67E
+let g:green = "9DD18D"                                                 " #9DD18D
+let g:light_green = "B9E6A7"                                           " #B9E6A7
+let g:lighter_green = "C9ECC0"                                         " #C9ECC0
+let g:lightest_green = "DDF5D7"                                        " #DDF5D7
 
-let g:dark_purple = "345FA8"                                           " #345FA8
-let g:purple = "967EFB"                                                " #967EFB
-let g:light_purple = "DEEBFE"                                          " #DEEBFE
+let g:dark_purple = "4A3D67"                                           " #4A3D67
+let g:purple = "D18FD8"                                                " #D18FD8
+let g:light_purple = "D7BFF7"                                          " #D7BFF7
 
-let g:darkest_blue = "0000df"                                          " #0000df
-let g:darker_blue = "0050A4"                                           " #0050A4
-let g:dark_blue = "0088FF"                                             " #0088FF
-let g:blue = "00AAFF"                                                  " #00AAFF
-let g:light_blue = "80FCFF"                                            " #80FCFF
-let g:greyish_blue = "8fbfdc"                                          " #8fbfdc
-let g:dirty_blue = "668799"                                            " #668799
+let g:darkest_blue = "0D2840"                                          " #0D2840
+let g:darker_blue = "204C6A"                                           " #204C6A
+let g:dark_blue = "82A3B8"                                             " #82A3B8
+let g:blue = "7DBDEB"                                                  " #7DBDEB
+let g:light_blue = "A4D2F5"                                            " #A4D2F5
+let g:greyish_blue = "82A3B8"                                          " #82A3B8
+let g:dirty_blue = "6D889D"                                            " #6D889D
+let g:cyan = "73CBD3"                                                  " #73CBD3
 
-let g:aubergine =  "4F0037"                                            " #4F0037
-let g:darker_red = "700009"                                            " #700009
-let g:dark_red = "902020"                                              " #902020
-let g:red = "FF0000"                                                   " #FF0000
-let g:dark_pink = "FF628C"                                             " #FF628C
-let g:pink = "FF00FF"                                                  " #FF00FF
-let g:light_pink = "EE80E1"                                            " #EE80E1
-let g:lightest_pink = "FFA5F3"                                         " #FFA5F3
-let g:pale_pink = "F0A0C0"                                             " #f0a0c0
-let g:dirty_pink = "EB939A"                                            " #EB939A
+let g:aubergine =  "4A2739"                                            " #4A2739
+let g:darker_red = "4A2739"                                            " #4A2739
+let g:dark_red = "6C354A"                                              " #6C354A
+let g:red = "FF7188"                                                   " #FF7188
+let g:dark_pink = "F7988B"                                             " #F7988B
+let g:pink = "F271A5"                                                  " #F271A5
+let g:property_pink = "E1A0C9"                                         " #E1A0C9
+let g:light_pink = "F6A4BE"                                            " #F6A4BE
+let g:lightest_pink = "FAD0DB"                                         " #FAD0DB
+let g:pale_pink = "E8A5B9"                                             " #E8A5B9
+let g:dirty_pink = "DA8C9E"                                            " #DA8C9E
 
 " Regex colors
 let g:regex_or = g:green
@@ -314,20 +318,20 @@ set background=dark
 call s:X("Normal",g:white,g:cobalt_bg,"","","")
 call s:X("Comment",g:dark_blue,"","italic","Grey","")
 call s:X("Todo",g:dark_blue,"","bold","Grey", "")
-call s:X("Constant",g:dark_pink,"","","Red","")
-call s:X("Special",g:light_green,"","","Green","")
+call s:X("Constant",g:purple,"","","Magenta","")
+call s:X("Special",g:cyan,"","","Cyan","")
 call s:X("MoreMsg",g:light_green,"","","Green","")
 call s:X("Delimiter",g:dirty_blue,"","","Grey","")
 
 call s:X("String",g:green,"","","Green","")
 hi! link StringDelimiter Delimiter
 
-call s:X("Identifier",g:dark_orange,"","",g:dark_orange,"")
-call s:X("Structure",g:dark_blue,"","italic","Grey","")
-call s:X("Function",g:yellow,"","","","")
+call s:X("Identifier",g:white,"","","White","")
+call s:X("Structure",g:class_yellow,"","italic","Yellow","")
+call s:X("Function",g:blue,"","","Blue","")
 call s:X("Statement",g:dark_orange,"","","","")
 call s:X("PreProc",g:dark_orange,"","",g:dark_orange,"")
-call s:X("Operator",g:dark_blue,"","italic","Grey","")
+call s:X("Operator",g:cyan,"","italic","Cyan","")
 
 call s:X("Type",g:yellow,"","","Yellow","")
 call s:X("NonText",g:dark_grey,g:cobalt_bg,"","Black","")
@@ -336,7 +340,7 @@ call s:X("SpecialKey",g:darker_grey,g:black,"","Black","")
 
 call s:X("MatchParen",g:white,g:dark_purple,"bold","","")
 
-call s:X("Directory",g:yellow,"","","Yellow","")
+call s:X("Directory",g:blue,"","","Blue","")
 call s:X("ErrorMsg","",g:dark_red,"","","DarkRed")
 hi! link Error ErrorMsg
 call s:X("Question",g:green,"","","Green","")
@@ -349,27 +353,27 @@ call s:X("TabLineSel",g:black,g:yellow,"italic,bold","Black","White")
 
 " Auto-completion
 call s:X("PMenu",g:lightest_grey,g:darkest_grey,"","","")
-call s:X("PMenuSel",g:darkest_grey,g:yellow,"","","")
+call s:X("PMenuSel",g:white,g:darker_blue,"","","")
 call s:X("PMenuSBar","",g:dark_grey,"","","")
 call s:X("PMenuThumb","",g:lightest_grey,"","","")
 
 call s:X("Visual","",g:darker_blue,"","","Black")
 
 call s:X("Cursor",g:cobalt_bg,g:yellow,"","","")
-call s:X("CursorColumn","",g:yellow,"","","Black")
-call s:X("CursorLine","",g:yellow,"","","Black")
+call s:X("CursorColumn","",g:cobalt_line,"","","Black")
+call s:X("CursorLine","",g:cobalt_line,"","","Black")
 call s:X("CursorLineNr",g:light_blue,"","none","White","")
 call s:X("LineNr",g:dark_grey,g:cobalt_bg,"none","Black","")
 
-call s:X("StatusLine",g:black,g:lightest_grey,"italic","","White")
+call s:X("StatusLine",g:white,g:darker_blue,"italic","White","")
 call s:X("StatusLineNC",g:white,g:darker_grey,"italic","White","Black")
-call s:X("VertSplit",g:yellow,"","","","")
+call s:X("VertSplit",g:dirty_blue,"","","","")
 call s:X("WildMenu",g:pale_pink,g:darkest_grey,"","Magenta","")
 
 call s:X("Folded",g:light_grey,g:darker_grey,"italic","Black","")
 call s:X("FoldColumn",g:dark_grey,g:black,"","","Black")
 call s:X("SignColumn",g:dark_grey,g:darkest_grey,"","","Black")
-call s:X("ColorColumn","",g:black,"","","Black")
+call s:X("ColorColumn","",g:darkest_grey,"","","Black")
 
 call s:X("Title",g:dirty_green,"","bold","Green","")
 
@@ -409,14 +413,14 @@ hi! link pythonOperator Statement
 
 " Ruby
 
-call s:X("rubyClass",g:dark_orange,"","","DarkBlue","")
+call s:X("rubyClass",g:class_yellow,"","","Yellow","")
 hi! link rubyModule rubyClass
 
 call s:X("rubyInstanceVariable",g:lightest_grey,"","","Cyan","")
-call s:X("rubySymbol",g:dark_pink,"","","Magenta","")
+call s:X("rubySymbol",g:purple,"","","Magenta","")
 hi! link rubyGlobalVariable rubyInstanceVariable
 
-call s:X("rubyAccess",g:purple,"","","","")
+call s:X("rubyAccess",g:white,"","","","")
 
 " params between pipes after do, and pipes themselfs
 call s:X("rubyBlockParameter",g:lightest_grey,"","","Blue","")
@@ -438,16 +442,16 @@ call s:X("rubyRegexpSpecial",g:light_green,"","","","")     " () and | char
 hi! link javaScriptValue Constant
 hi! link javaScriptRegexpString rubyRegexp
 
-call s:X("jsFunction",g:light_pink,"","","","")
-call s:X("jsFuncCall",g:yellow,"","","","")
+call s:X("jsFunction",g:pink,"","","","")
+call s:X("jsFuncCall",g:blue,"","","","")
 call s:X("jsOperator",g:light_orange,"","","","")
-call s:X("jsStorageClass",g:yellow,"","","","")
+call s:X("jsStorageClass",g:dark_orange,"","","","")
 call s:X("jsFuncArgs",g:lightest_grey,"","","","")
 
-call s:X("jsBuiltins",g:light_orange,"","","","")
-call s:X("jsUndefined",g:dark_pink,"","","","")
+call s:X("jsBuiltins",g:white,"","italic","","")
+call s:X("jsUndefined",g:purple,"","","","")
 call s:X("jsThis",g:light_pink,"","","","")
-call s:X("jsPrototype",g:dirty_pink,"","","","")
+call s:X("jsPrototype",g:property_pink,"","","","")
 
 call s:X("jsRegexpOr",g:regex_or,"","","","")                 " | highlight
 call s:X("jsRegexpQuantifier",g:regex_quantifier,"","","","") " ? and {4}
@@ -466,7 +470,7 @@ hi! link coffeeTodo todo
 hi! link coffeeHeregexComment comment
 call s:X("coffeeKeyword",g:dark_orange,"","","","")
 call s:X("coffeeObject",g:blue,"","","","")
-call s:X("coffeeObjAssign",g:yellow,"","","","")
+call s:X("coffeeObjAssign",g:cyan,"","","","")
 call s:X("coffeeExtendedOp",g:dark_orange,"","","","")
 call s:X("coffeeParen",g:lightest_grey,"","","","")
 call s:X("coffeeParens",g:lightest_grey,"","","","")
@@ -491,9 +495,9 @@ call s:X("coffeeCurlies",g:white,"","","","")
 hi! link coffeeConditional Conditional
 call s:X("coffeeSpecialVar",g:light_pink,"","","","")
 call s:X("coffeeDotAccess",g:white,"","","","")
-call s:X("coffeeConstant",g:dark_pink,"","","","")
+call s:X("coffeeConstant",g:purple,"","","","")
 call s:X("coffeeRepeat",g:dark_orange,"","","","")
-call s:X("coffeeGlobal",g:dark_pink,"","","","")
+call s:X("coffeeGlobal",g:white,"","","","")
 call s:X("coffeeOperator",g:dark_orange,"","","","")
 hi! link coffeeSemicolonError ErrorMsg
 hi! link coffeeReservedError ErrorMsg
@@ -507,9 +511,9 @@ call s:X("htmlSpecialTagName",g:blue,"","","","")
 
 call s:X("htmlArg",g:dark_orange,"","","","")
 call s:X("htmlEvent",g:dark_orange,"","","","")
-call s:X("htmlString",g:yellow,"","","","")
+call s:X("htmlString",g:green,"","","","")
 
-call s:X("htmlTitle",g:purple,"","","","")
+call s:X("htmlTitle",g:cyan,"","","","")
 call s:X("htmlH1",g:light_orange,"","","","")
 call s:X("htmlItalic",g:lightest_grey,"","","","")
 
@@ -533,7 +537,7 @@ call s:X("hamlAttributes",g:pink,"","","","")
 call s:X("hamlInterpolationDelimiter",g:green,"","","","")
 
 " Markdown
-call s:X("markdownH1",g:yellow,"","","","")
+call s:X("markdownH1",g:cyan,"","","","")
 hi! link markdownH2 markdownH1
 hi! link markdownH3 markdownH1
 hi! link markdownH4 markdownH1
@@ -549,25 +553,25 @@ hi! link markdownCodeBlock markdownCode
 call s:X("markdownCodeDelimiter",g:dark_blue,"","","","")
 
 call s:X("markdownLinkText",g:green,"","","","")
-call s:X("markdownUrl",g:dark_pink,"","","","")
+call s:X("markdownUrl",g:blue,"","","","")
 
-call s:X("markdownId",g:yellow,"","","","")
+call s:X("markdownId",g:cyan,"","","","")
 hi! link markdownIdDeclaration markdownId
 
 " CSS
-call s:X("cssIdentifier",g:yellow,"","","","")
+call s:X("cssIdentifier",g:cyan,"","","","")
 call s:X("cssIncludeKeyword",g:dark_orange,"","","","")
 call s:X("cssMediaType",g:dirty_pink,"","","","")
 call s:X("cssMediaKeyword",g:dark_orange,"","","","")
 call s:X("cssInclude",g:white,"","","","")
 call s:X("cssMediaProp",g:light_green,"","","","")
-call s:X("cssValueLength",g:light_yellow,"","","","")
+call s:X("cssValueLength",g:purple,"","","","")
 call s:X("cssUnitDecorators",g:dark_orange,"","","","")
 call s:X("cssBraces",g:white,"","","","")
 call s:X("cssTagName",g:light_blue,"","","","")
 call s:X("cssClassName",g:green,"","","","")
 call s:X("cssPseudoClassId",g:light_orange,"","","","")
-call s:X("cssPseudoClassFn",g:dark_pink,"","","","")
+call s:X("cssPseudoClassFn",g:pink,"","","","")
 
 call s:X("cssBoxAttr",g:light_yellow,"","","","")
 hi! link cssValueNumber cssBoxAttr
@@ -698,8 +702,8 @@ if !exists("g:cobalt_bg_256")
 end
 
 if !s:low_color
-  hi StatusLineNC ctermbg=232
-  hi Folded ctermbg=236
+  hi StatusLineNC ctermbg=235
+  hi Folded ctermbg=235
   hi FoldColumn ctermbg=234
   hi SignColumn ctermbg=236
   hi CursorColumn ctermbg=234
@@ -707,9 +711,9 @@ if !s:low_color
   hi SpecialKey ctermbg=234
   exec "hi NonText ctermbg=".g:cobalt_bg_256
   exec "hi LineNr ctermbg=".g:cobalt_bg_256
-  hi DiffText ctermfg=81
+  hi DiffText ctermfg=110
   exec "hi Normal ctermbg=".g:cobalt_bg_256
-  hi DbgBreakPt ctermbg=53
+  hi DbgBreakPt ctermbg=236
   hi IndentGuidesOdd ctermbg=235
   hi IndentGuidesEven ctermbg=234
 endif
