@@ -281,6 +281,7 @@ let g:lightest_green = "DDF5D7"                                        " #DDF5D7
 let g:dark_purple = "4A3D67"                                           " #4A3D67
 let g:salmon = "FF628C"                                                " #FF628C
 let g:light_purple = "D7BFF7"                                          " #D7BFF7
+let g:operator_purple = "B267E6"                                       " #B267E6
 
 let g:darkest_blue = "0D2840"                                          " #0D2840
 let g:darker_blue = "205276"                                           " #205276
@@ -329,12 +330,12 @@ call s:X("Delimiter",g:dirty_blue,"","","Grey","")
 call s:X("String",g:green,"","","Green","")
 hi! link StringDelimiter Delimiter
 
-call s:X("Identifier",g:variable_pink,"","","Magenta","")
+call s:X("Identifier",g:white,"","","White","")
 call s:X("Structure",g:class_yellow,"","italic","Yellow","")
 call s:X("Function",g:call_yellow,"","","Yellow","")
 call s:X("Statement",g:dark_orange,"","","","")
 call s:X("PreProc",g:dark_orange,"","",g:dark_orange,"")
-call s:X("Operator",g:white,"","italic","White","")
+call s:X("Operator",g:operator_purple,"","","Magenta","")
 
 call s:X("Type",g:yellow,"","","Yellow","")
 call s:X("NonText",g:dark_grey,g:cobalt_bg,"","Black","")
@@ -406,27 +407,27 @@ hi! link phpQuoteDouble StringDelimiter
 hi! link phpBoolean Constant
 hi! link phpNull Constant
 hi! link phpArrayPair Operator
-hi! link phpOperator Normal
-hi! link phpRelation Normal
+hi! link phpOperator Operator
+hi! link phpRelation Operator
 hi! link phpVarSelector Identifier
 
 " Python
 
-hi! link pythonOperator Statement
+hi! link pythonOperator Operator
 
 " Ruby
 
 call s:X("rubyClass",g:class_yellow,"","","Yellow","")
 hi! link rubyModule rubyClass
 
-call s:X("rubyInstanceVariable",g:variable_pink,"","","Magenta","")
+call s:X("rubyInstanceVariable",g:white,"","","White","")
 call s:X("rubySymbol",g:salmon,"","","Magenta","")
 hi! link rubyGlobalVariable rubyInstanceVariable
 
 call s:X("rubyAccess",g:white,"","","","")
 
 " params between pipes after do, and pipes themselfs
-call s:X("rubyBlockParameter",g:parameter_pink,"","","Magenta","")
+call s:X("rubyBlockParameter",g:white,"","","White","")
 call s:X("rubyBlockParameterList",g:white,"","","Blue","")
 
 call s:X("rubyInterpolation",g:lighter_green,"","","Magenta","")
@@ -447,14 +448,14 @@ hi! link javaScriptRegexpString rubyRegexp
 
 call s:X("jsFunction",g:pink,"","","","")
 call s:X("jsFuncCall",g:call_yellow,"","","","")
-call s:X("jsOperator",g:white,"","","","")
+call s:X("jsOperator",g:operator_purple,"","","","")
 call s:X("jsStorageClass",g:dark_orange,"","","","")
-call s:X("jsFuncArgs",g:parameter_pink,"","","","")
+call s:X("jsFuncArgs",g:white,"","","","")
 
 call s:X("jsBuiltins",g:dark_orange,"","italic","","")
 call s:X("jsUndefined",g:salmon,"","","","")
-call s:X("jsThis",g:light_pink,"","","","")
-call s:X("jsPrototype",g:property_pink,"","","","")
+call s:X("jsThis",g:white,"","","","")
+call s:X("jsPrototype",g:white,"","","","")
 
 call s:X("jsRegexpOr",g:regex_or,"","","","")                 " | highlight
 call s:X("jsRegexpQuantifier",g:regex_quantifier,"","","","") " ? and {4}
@@ -472,12 +473,12 @@ hi! link coffeeBlockComment comment
 hi! link coffeeTodo todo
 hi! link coffeeHeregexComment comment
 call s:X("coffeeKeyword",g:dark_orange,"","","","")
-call s:X("coffeeObject",g:blue,"","","","")
-call s:X("coffeeObjAssign",g:cyan,"","","","")
-call s:X("coffeeExtendedOp",g:dark_orange,"","","","")
+call s:X("coffeeObject",g:white,"","","","")
+call s:X("coffeeObjAssign",g:operator_purple,"","","","")
+call s:X("coffeeExtendedOp",g:operator_purple,"","","","")
 call s:X("coffeeParen",g:lightest_grey,"","","","")
 call s:X("coffeeParens",g:lightest_grey,"","","","")
-call s:X("coffeeSpecialOp",g:lightest_grey,"","","","")
+call s:X("coffeeSpecialOp",g:operator_purple,"","","","")
 call s:X("coffeeStatement",g:dark_orange,"","","","")
 hi! link coffeeString String
 hi! link coffeeHeredoc String
@@ -496,12 +497,12 @@ call s:X("coffeeBrackets",g:white,"","","","")
 call s:X("coffeeCurly",g:white,"","","","")
 call s:X("coffeeCurlies",g:white,"","","","")
 hi! link coffeeConditional Conditional
-call s:X("coffeeSpecialVar",g:light_pink,"","","","")
+call s:X("coffeeSpecialVar",g:white,"","","","")
 call s:X("coffeeDotAccess",g:white,"","","","")
 call s:X("coffeeConstant",g:salmon,"","","","")
 call s:X("coffeeRepeat",g:dark_orange,"","","","")
 call s:X("coffeeGlobal",g:white,"","","","")
-call s:X("coffeeOperator",g:dark_orange,"","","","")
+call s:X("coffeeOperator",g:operator_purple,"","","","")
 hi! link coffeeSemicolonError ErrorMsg
 hi! link coffeeReservedError ErrorMsg
 hi! link coffeeSpaceError ErrorMsg
@@ -625,12 +626,12 @@ hi! link erlangNode Identifier
 
 " Lua
 
-hi! link luaOperator Conditional
+hi! link luaOperator Operator
 
 " C
 
 hi! link cFormat Identifier
-hi! link cOperator Constant
+hi! link cOperator Operator
 
 " Objective-C/Cocoa
 
@@ -647,7 +648,7 @@ hi! link objcMessageName Identifier
 
 " Vimscript
 
-hi! link vimOper Normal
+hi! link vimOper Operator
 
 " Debugger.vim
 

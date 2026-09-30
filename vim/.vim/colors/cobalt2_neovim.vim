@@ -38,12 +38,19 @@ if exists("syntax_on")
   hi WarningMsg ctermfg=231 ctermbg=236 cterm=NONE guifg=#FFFFFF guibg=#49351F gui=NONE
   hi Float ctermfg=204 ctermbg=NONE cterm=NONE guifg=#FF628C guibg=NONE gui=NONE
   hi Function ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFC600 guibg=NONE gui=NONE
-  hi Identifier ctermfg=213 ctermbg=NONE cterm=NONE guifg=#FB94FF guibg=NONE gui=NONE
+  hi Identifier ctermfg=231 ctermbg=NONE cterm=NONE guifg=#FFFFFF guibg=NONE gui=NONE
   hi Keyword ctermfg=214 ctermbg=NONE cterm=NONE guifg=#FF9D00 guibg=NONE gui=NONE
   hi Label ctermfg=76 ctermbg=NONE cterm=NONE guifg=#3AD900 guibg=NONE gui=NONE
   hi NonText ctermfg=220 ctermbg=236 cterm=NONE guifg=#FFC600 guibg=#102E48 gui=NONE
   hi Number ctermfg=204 ctermbg=NONE cterm=NONE guifg=#FF628C guibg=NONE gui=NONE
-  hi Operator ctermfg=231 ctermbg=NONE cterm=NONE guifg=#F8F8F8 guibg=NONE gui=NONE
+  hi Operator ctermfg=134 ctermbg=NONE cterm=NONE guifg=#B267E6 guibg=NONE gui=NONE
+  hi! link pythonOperator Operator
+  hi! link phpOperator Operator
+  hi! link phpRelation Operator
+  hi! link luaOperator Operator
+  hi! link cOperator Operator
+  hi! link vimOper Operator
+  hi! link jsOperator Operator
   hi PreProc ctermfg=214 ctermbg=NONE cterm=NONE guifg=#FF9D00 guibg=NONE gui=NONE
   hi Special ctermfg=37 ctermbg=NONE cterm=NONE guifg=#06A6A8 guibg=NONE gui=NONE
   hi SpecialKey ctermfg=220 ctermbg=23 cterm=NONE guifg=#FFC600 guibg=#173C57 gui=NONE
@@ -61,16 +68,16 @@ if exists("syntax_on")
   hi rubySymbol ctermfg=204 ctermbg=NONE cterm=NONE guifg=#FF628C guibg=NONE gui=NONE
   hi rubyConstant ctermfg=76 ctermbg=NONE cterm=NONE guifg=#3AD900 guibg=NONE gui=NONE
   hi rubyStringDelimiter ctermfg=76 ctermbg=NONE cterm=NONE guifg=#3AD900 guibg=NONE gui=NONE
-  hi rubyBlockParameter ctermfg=217 ctermbg=23 cterm=NONE guifg=#F4ABA4 guibg=#173C57 gui=NONE
-  hi rubyInstanceVariable ctermfg=213 ctermbg=NONE cterm=NONE guifg=#FB94FF guibg=NONE gui=NONE
+  hi rubyBlockParameter ctermfg=231 ctermbg=23 cterm=NONE guifg=#FFFFFF guibg=#173C57 gui=NONE
+  hi rubyInstanceVariable ctermfg=231 ctermbg=NONE cterm=NONE guifg=#FFFFFF guibg=NONE gui=NONE
   hi rubyInclude ctermfg=214 ctermbg=NONE cterm=NONE guifg=#FF9D00 guibg=NONE gui=NONE
-  hi rubyGlobalVariable ctermfg=213 ctermbg=23 cterm=NONE guifg=#FB94FF guibg=#173C57 gui=NONE
+  hi rubyGlobalVariable ctermfg=231 ctermbg=23 cterm=NONE guifg=#FFFFFF guibg=#173C57 gui=NONE
   hi rubyRegexp ctermfg=37 ctermbg=NONE cterm=NONE guifg=#06A6A8 guibg=NONE gui=NONE
   hi rubyRegexpDelimiter ctermfg=37 ctermbg=NONE cterm=NONE guifg=#06A6A8 guibg=NONE gui=NONE
   hi rubyEscape ctermfg=37 ctermbg=NONE cterm=NONE guifg=#06A6A8 guibg=NONE gui=NONE
   hi rubyControl ctermfg=214 ctermbg=NONE cterm=NONE guifg=#FF9D00 guibg=NONE gui=NONE
-  hi rubyClassVariable ctermfg=213 ctermbg=23 cterm=NONE guifg=#FB94FF guibg=#173C57 gui=NONE
-  hi rubyOperator ctermfg=231 ctermbg=NONE cterm=NONE guifg=#F8F8F8 guibg=NONE gui=NONE
+  hi rubyClassVariable ctermfg=231 ctermbg=23 cterm=NONE guifg=#FFFFFF guibg=#173C57 gui=NONE
+  hi rubyOperator ctermfg=134 ctermbg=NONE cterm=NONE guifg=#B267E6 guibg=NONE gui=NONE
   hi rubyException ctermfg=214 ctermbg=NONE cterm=NONE guifg=#FF9D00 guibg=NONE gui=NONE
   hi rubyPseudoVariable ctermfg=231 ctermbg=NONE cterm=NONE guifg=#FFFFFF guibg=NONE gui=NONE
   hi rubyRailsUserClass ctermfg=180 ctermbg=NONE cterm=NONE guifg=#D7BA7D guibg=NONE gui=NONE
