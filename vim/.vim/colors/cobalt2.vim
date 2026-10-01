@@ -268,6 +268,7 @@ let g:white = "FFFFFF"                                                 " #FFFFFF
 let g:dark_orange = "FF9D00"                                           " #FF9D00
 let g:light_orange = "FD971F"                                          " #FD971F
 let g:yellow = "FFDD00"                                                " #FFDD00
+let g:type_yellow = "E5CA48"                                          " #E5CA48
 let g:class_yellow = "D7BA7D"                                          " #D7BA7D
 let g:light_yellow = "FFF099"                                          " #FFF099
 
@@ -281,7 +282,7 @@ let g:lightest_green = "DDF5D7"                                        " #DDF5D7
 let g:dark_purple = "4A3D67"                                           " #4A3D67
 let g:salmon = "FF628C"                                                " #FF628C
 let g:light_purple = "D7BFF7"                                          " #D7BFF7
-let g:operator_purple = "B267E6"                                       " #B267E6
+let g:operator_purple = "BA76E9"                                       " #BA76E9
 
 let g:darkest_blue = "0D2840"                                          " #0D2840
 let g:darker_blue = "205276"                                           " #205276
@@ -301,7 +302,7 @@ let g:pink = "F92672"                                                  " #F92672
 let g:property_pink = "FFDBC7"                                         " #FFDBC7
 let g:variable_pink = "FB94FF"                                         " #FB94FF
 let g:parameter_pink = "F4ABA4"                                        " #F4ABA4
-let g:call_yellow = "FFC600"                                           " #FFC600
+let g:call_yellow = "E2B40D"                                           " #E2B40D
 let g:light_pink = "F6A4BE"                                            " #F6A4BE
 let g:lightest_pink = "FAD0DB"                                         " #FAD0DB
 let g:pale_pink = "E8A5B9"                                             " #E8A5B9
@@ -337,7 +338,7 @@ call s:X("Statement",g:dark_orange,"","","","")
 call s:X("PreProc",g:dark_orange,"","",g:dark_orange,"")
 call s:X("Operator",g:operator_purple,"","","Magenta","")
 
-call s:X("Type",g:yellow,"","","Yellow","")
+call s:X("Type",g:type_yellow,"","","Yellow","")
 call s:X("NonText",g:dark_grey,g:cobalt_bg,"","Black","")
 
 call s:X("SpecialKey",g:darker_grey,g:black,"","Black","")

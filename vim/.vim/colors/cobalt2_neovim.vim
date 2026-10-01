@@ -37,13 +37,13 @@ if exists("syntax_on")
   hi ErrorMsg ctermfg=231 ctermbg=237 cterm=NONE guifg=#FFFFFF guibg=#4A2739 gui=NONE
   hi WarningMsg ctermfg=231 ctermbg=236 cterm=NONE guifg=#FFFFFF guibg=#49351F gui=NONE
   hi Float ctermfg=204 ctermbg=NONE cterm=NONE guifg=#FF628C guibg=NONE gui=NONE
-  hi Function ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFC600 guibg=NONE gui=NONE
+  hi Function ctermfg=178 ctermbg=NONE cterm=NONE guifg=#E2B40D guibg=NONE gui=NONE
   hi Identifier ctermfg=231 ctermbg=NONE cterm=NONE guifg=#FFFFFF guibg=NONE gui=NONE
   hi Keyword ctermfg=214 ctermbg=NONE cterm=NONE guifg=#FF9D00 guibg=NONE gui=NONE
   hi Label ctermfg=76 ctermbg=NONE cterm=NONE guifg=#3AD900 guibg=NONE gui=NONE
   hi NonText ctermfg=220 ctermbg=236 cterm=NONE guifg=#FFC600 guibg=#102E48 gui=NONE
   hi Number ctermfg=204 ctermbg=NONE cterm=NONE guifg=#FF628C guibg=NONE gui=NONE
-  hi Operator ctermfg=134 ctermbg=NONE cterm=NONE guifg=#B267E6 guibg=NONE gui=NONE
+  hi Operator ctermfg=140 ctermbg=NONE cterm=NONE guifg=#BA76E9 guibg=NONE gui=NONE
   hi! link pythonOperator Operator
   hi! link phpOperator Operator
   hi! link phpRelation Operator
@@ -57,10 +57,10 @@ if exists("syntax_on")
   hi Statement ctermfg=214 ctermbg=NONE cterm=NONE guifg=#FF9D00 guibg=NONE gui=NONE
   hi StorageClass ctermfg=214 ctermbg=NONE cterm=NONE guifg=#FF9D00 guibg=NONE gui=NONE
   hi String ctermfg=76 ctermbg=NONE cterm=NONE guifg=#3AD900 guibg=NONE gui=NONE
-  hi Tag ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFDD00 guibg=NONE gui=NONE
+  hi Tag ctermfg=185 ctermbg=NONE cterm=NONE guifg=#E5CA48 guibg=NONE gui=NONE
   hi Title ctermfg=231 ctermbg=NONE cterm=bold guifg=#FFFFFF guibg=NONE gui=bold
   hi Todo ctermfg=33 ctermbg=NONE cterm=inverse,bold guifg=#0088FF guibg=NONE gui=inverse,bold,italic
-  hi Type ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFDD00 guibg=NONE gui=NONE
+  hi Type ctermfg=185 ctermbg=NONE cterm=NONE guifg=#E5CA48 guibg=NONE gui=NONE
   hi Underlined ctermfg=NONE ctermbg=NONE cterm=underline guifg=NONE guibg=NONE gui=underline
   hi rubyClass ctermfg=180 ctermbg=NONE cterm=NONE guifg=#D7BA7D guibg=NONE gui=NONE
   hi rubyFunction ctermfg=197 ctermbg=NONE cterm=NONE guifg=#F92672 guibg=NONE gui=NONE
@@ -77,28 +77,28 @@ if exists("syntax_on")
   hi rubyEscape ctermfg=37 ctermbg=NONE cterm=NONE guifg=#06A6A8 guibg=NONE gui=NONE
   hi rubyControl ctermfg=214 ctermbg=NONE cterm=NONE guifg=#FF9D00 guibg=NONE gui=NONE
   hi rubyClassVariable ctermfg=231 ctermbg=23 cterm=NONE guifg=#FFFFFF guibg=#173C57 gui=NONE
-  hi rubyOperator ctermfg=134 ctermbg=NONE cterm=NONE guifg=#B267E6 guibg=NONE gui=NONE
+  hi rubyOperator ctermfg=140 ctermbg=NONE cterm=NONE guifg=#BA76E9 guibg=NONE gui=NONE
   hi rubyException ctermfg=214 ctermbg=NONE cterm=NONE guifg=#FF9D00 guibg=NONE gui=NONE
   hi rubyPseudoVariable ctermfg=231 ctermbg=NONE cterm=NONE guifg=#FFFFFF guibg=NONE gui=NONE
   hi rubyRailsUserClass ctermfg=180 ctermbg=NONE cterm=NONE guifg=#D7BA7D guibg=NONE gui=NONE
-  hi rubyRailsARAssociationMethod ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFC600 guibg=NONE gui=NONE
-  hi rubyRailsARMethod ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFC600 guibg=NONE gui=NONE
-  hi rubyRailsRenderMethod ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFC600 guibg=NONE gui=NONE
-  hi rubyRailsMethod ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFC600 guibg=NONE gui=NONE
+  hi rubyRailsARAssociationMethod ctermfg=178 ctermbg=NONE cterm=NONE guifg=#E2B40D guibg=NONE gui=NONE
+  hi rubyRailsARMethod ctermfg=178 ctermbg=NONE cterm=NONE guifg=#E2B40D guibg=NONE gui=NONE
+  hi rubyRailsRenderMethod ctermfg=178 ctermbg=NONE cterm=NONE guifg=#E2B40D guibg=NONE gui=NONE
+  hi rubyRailsMethod ctermfg=178 ctermbg=NONE cterm=NONE guifg=#E2B40D guibg=NONE gui=NONE
   hi erubyDelimiter ctermfg=231 ctermbg=NONE cterm=NONE guifg=#FFFFFF guibg=NONE gui=NONE
   hi erubyComment ctermfg=33 ctermbg=NONE cterm=NONE guifg=#0088FF guibg=NONE gui=italic
-  hi erubyRailsMethod ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFC600 guibg=NONE gui=NONE
-  hi javaScriptRailsFunction ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFC600 guibg=NONE gui=NONE
+  hi erubyRailsMethod ctermfg=178 ctermbg=NONE cterm=NONE guifg=#E2B40D guibg=NONE gui=NONE
+  hi javaScriptRailsFunction ctermfg=178 ctermbg=NONE cterm=NONE guifg=#E2B40D guibg=NONE gui=NONE
   hi javaScriptBraces ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
   hi yamlKey ctermfg=203 ctermbg=NONE cterm=NONE guifg=#EC5F67 guibg=NONE gui=NONE
   hi yamlAnchor ctermfg=231 ctermbg=23 cterm=NONE guifg=#FFFFFF guibg=#173C57 gui=NONE
   hi yamlAlias ctermfg=231 ctermbg=23 cterm=NONE guifg=#FFFFFF guibg=#173C57 gui=NONE
   hi yamlDocumentHeader ctermfg=76 ctermbg=NONE cterm=NONE guifg=#3AD900 guibg=NONE gui=NONE
   hi cssURL ctermfg=231 ctermbg=23 cterm=NONE guifg=#FFFFFF guibg=#173C57 gui=NONE
-  hi cssFunctionName ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFC600 guibg=NONE gui=NONE
+  hi cssFunctionName ctermfg=178 ctermbg=NONE cterm=NONE guifg=#E2B40D guibg=NONE gui=NONE
   hi cssColor ctermfg=204 ctermbg=NONE cterm=NONE guifg=#FF628C guibg=NONE gui=NONE
-  hi cssPseudoClassId ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFDD00 guibg=NONE gui=NONE
-  hi cssClassName ctermfg=220 ctermbg=NONE cterm=NONE guifg=#FFDD00 guibg=NONE gui=NONE
+  hi cssPseudoClassId ctermfg=185 ctermbg=NONE cterm=NONE guifg=#E5CA48 guibg=NONE gui=NONE
+  hi cssClassName ctermfg=185 ctermbg=NONE cterm=NONE guifg=#E5CA48 guibg=NONE gui=NONE
   hi cssValueLength ctermfg=204 ctermbg=NONE cterm=NONE guifg=#FF628C guibg=NONE gui=NONE
   hi cssCommonAttr ctermfg=213 ctermbg=NONE cterm=NONE guifg=#FB94FF guibg=NONE gui=NONE
   hi cssBraces ctermfg=231 ctermbg=NONE cterm=NONE guifg=#FFFFFF guibg=NONE gui=NONE
@@ -126,7 +126,7 @@ if exists("syntax_on")
   hi link htmlH5 htmlH1
   hi link htmlH6 htmlH1
   hi htmlLink guifg=NONE guibg=NONE gui=NONE
-  hi htmlSpecialTagName guifg=#FFDD00 guibg=NONE gui=NONE
+  hi htmlSpecialTagName guifg=#E5CA48 guibg=NONE gui=NONE
 
   " JavaScript
   hi javaScriptFunction guifg=#F92672 guibg=NONE gui=NONE
